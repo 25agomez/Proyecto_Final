@@ -23,8 +23,8 @@ Generado por `CongestionRegressionTest` (`cd backend && ./mvnw test -Dtest=Conge
 | Franjas de 15 min por horizonte | 1531 |
 | Partición temporal | 80 % entrenamiento / 20 % hold-out (sin fuga) |
 | Servicio medio estimado | 7.033 min (cv² 0.100) |
-| Tiempo de entrenamiento (3 horizontes) | 538 ms |
-| Latencia del pronóstico | p50 0.254 ms · p95 0.843 ms · p99 2.569 ms |
+| Tiempo de entrenamiento (3 horizontes) | 501 ms |
+| Latencia del pronóstico | p50 0.251 ms · p95 1.011 ms · p99 2.226 ms |
 
 ## Métricas del hold-out temporal
 

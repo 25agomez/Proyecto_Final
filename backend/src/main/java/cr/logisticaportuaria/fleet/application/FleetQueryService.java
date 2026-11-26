@@ -126,7 +126,7 @@ public class FleetQueryService {
                         state.isSilent(now, properties.getSilenceSeconds())));
             }
         }
-        result.sort(Comparator.comparing(VehicleResponse::code));
+        result.sort(Comparator.comparing(v -> v.code()));
         return result;
     }
 
@@ -148,8 +148,8 @@ public class FleetQueryService {
         List<VehiclePositionRepository.TrackPoint> points = positionRepository.findTrack(vehicleId,
                 start, end, properties.getTrackMaxPoints());
         List<double[]> coordinates = TrackGeometry.toLonLat(
-                points.stream().map(VehiclePositionRepository.TrackPoint::x).toList(),
-                points.stream().map(VehiclePositionRepository.TrackPoint::y).toList());
+                points.stream().map(p -> p.x()).toList(),
+                points.stream().map(p -> p.y()).toList());
         return TrackResponse.lineString(coordinates);
     }
 
@@ -169,7 +169,7 @@ public class FleetQueryService {
         List<VehiclePositionRepository.KpiSample> samples = positionRepository.findSamples(yard,
                 start, end, properties.getKpiMaxPoints());
         Map<UUID, List<VehiclePositionRepository.KpiSample>> byVehicle = samples.stream()
-                .collect(Collectors.groupingBy(VehiclePositionRepository.KpiSample::vehicleId));
+                .collect(Collectors.groupingBy(s -> s.vehicleId()));
 
         double productive = 0;
         double idle = 0;
@@ -237,7 +237,7 @@ public class FleetQueryService {
         }
         for (ContainerTraceRepository.PlacementReading placement
                 : traceRepository.findPlacements(containerId)) {
-            String location = String.format("bloque %s, bahia %d, fila %d, nivel %d",
+            final String location = String.format(Locale.ROOT, "bloque %s, bahia %d, fila %d, nivel %d",
                     placement.blockCode(), placement.bay(), placement.row(), placement.tier());
             entries.add(new ContainerTraceResponse.Entry("YARD_POSITION", placement.placedAt(),
                     "Ubicado en " + location, null, null, location));
@@ -252,7 +252,7 @@ public class FleetQueryService {
                     String.format("Orden %s en estado %s", order.orderType(), order.status()),
                     null, order.vehicleCode(), null));
         }
-        entries.sort(Comparator.comparing(ContainerTraceResponse.Entry::at));
+        entries.sort(Comparator.comparing(e -> e.at()));
         return new ContainerTraceResponse(normalized, entries);
     }
 

@@ -94,7 +94,13 @@ CRITERIOS DE ACEPTACIÓN
 ENTREGABLES
 Rutas completas de todos los archivos creados + resumen de decisiones.
 
-[Pegar aquí el bloque "CIERRE OBLIGATORIO"]
+CIERRE OBLIGATORIO
+1. Ejecuta compilación, lint y pruebas; pega la salida resumida (no inventes resultados).
+2. Crea docs/experiments/EXP-NNN-<slug>.md con la plantilla de la sección 7 de AGENTS.md.
+3. Actualiza MEMORY.md: estado de componentes, bitácora de sesiones, ADRs nuevos,
+   índice de experimentos, métricas medidas, problemas abiertos y próximos pasos.
+4. Termina con un resumen de máximo 15 líneas: qué se entregó, qué falló, qué supuestos hiciste.
+Si algo no pudo medirse, escribe "NO MEDIDO" y explica por qué.
 ```
 
 ---
@@ -166,7 +172,13 @@ CRITERIOS DE ACEPTACIÓN
 NO HACER
 - No usar APIs OCR de nube. No inventar métricas. No incluir pesos de modelos con licencia restrictiva sin documentarlo.
 
-[Pegar aquí el bloque "CIERRE OBLIGATORIO"]
+CIERRE OBLIGATORIO
+1. Ejecuta compilación, lint y pruebas; pega la salida resumida (no inventes resultados).
+2. Crea docs/experiments/EXP-NNN-<slug>.md con la plantilla de la sección 7 de AGENTS.md.
+3. Actualiza MEMORY.md: estado de componentes, bitácora de sesiones, ADRs nuevos,
+   índice de experimentos, métricas medidas, problemas abiertos y próximos pasos.
+4. Termina con un resumen de máximo 15 líneas: qué se entregó, qué falló, qué supuestos hiciste.
+Si algo no pudo medirse, escribe "NO MEDIDO" y explica por qué.
 ```
 
 ---
@@ -221,7 +233,13 @@ CRITERIOS DE ACEPTACIÓN
 - `docker compose up backend postgres mosquitto` funcional; Swagger UI accesible.
 - Un script `infra/scripts/demo_gate_flow.sh` que simule un ingreso y una salida con curl y muestre los tiempos calculados.
 
-[Pegar aquí el bloque "CIERRE OBLIGATORIO"]
+CIERRE OBLIGATORIO
+1. Ejecuta compilación, lint y pruebas; pega la salida resumida (no inventes resultados).
+2. Crea docs/experiments/EXP-NNN-<slug>.md con la plantilla de la sección 7 de AGENTS.md.
+3. Actualiza MEMORY.md: estado de componentes, bitácora de sesiones, ADRs nuevos,
+   índice de experimentos, métricas medidas, problemas abiertos y próximos pasos.
+4. Termina con un resumen de máximo 15 líneas: qué se entregó, qué falló, qué supuestos hiciste.
+Si algo no pudo medirse, escribe "NO MEDIDO" y explica por qué.
 ```
 
 ---

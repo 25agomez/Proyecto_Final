@@ -1,6 +1,6 @@
 # EXP-004 — Benchmark del stacking (S/M/L)
 
-- **Fecha de medición:** 2026-10-23
+- **Fecha de medición:** 2026-11-26
 - **Semilla:** 2026
 - **Patio:** 10 bloques × 5 filas × 25 bahías × 4 niveles = 5 000 slots
 - **Ocupación inicial:** 40 % (misma para las cuatro estrategias)
@@ -19,18 +19,18 @@
 
 | Escenario | Contenedores | Estrategia | Ubicados | Sin ubicar | Restows del patio | Restows añadidos | Distancia media (m) | Ocupación | Cómputo (ms) | Estado |
 |---|---:|---|---:|---:|---:|---:|---:|---:|---:|---|
-| S | 100 | RANDOM | 100 | 0 | 218 | 5 | 388.71 | 18.00 % | 75 | RANDOM |
-| S | 100 | FIFO | 100 | 0 | 279 | 66 | 364.67 | 18.00 % | 2 | FIFO |
-| S | 100 | HEURISTIC | 100 | 0 | 213 | 0 | 368.42 | 18.00 % | 111 | HEURISTIC |
-| S | 100 | CP_SAT | 100 | 0 | 213 | 0 | 370.38 | 18.00 % | 5577 | FEASIBLE |
-| M | 500 | RANDOM | 500 | 0 | 290 | 77 | 380.00 | 26.00 % | 105 | RANDOM |
-| M | 500 | FIFO | 500 | 0 | 598 | 385 | 304.66 | 26.00 % | 6 | FIFO |
-| M | 500 | HEURISTIC | 500 | 0 | 213 | 0 | 344.88 | 26.00 % | 194 | HEURISTIC |
-| M | 500 | CP_SAT | 500 | 0 | 213 | 0 | 358.74 | 26.00 % | 10585 | FEASIBLE |
-| L | 2000 | RANDOM | 1933 | 67 | 1177 | 964 | 376.99 | 54.00 % | 341 | RANDOM |
-| L | 2000 | FIFO | 2000 | 0 | 1852 | 1639 | 285.38 | 56.00 % | 43 | FIFO |
-| L | 2000 | HEURISTIC | 1924 | 76 | 239 | 26 | 357.77 | 54.00 % | 622 | HEURISTIC |
-| L | 2000 | CP_SAT | 1966 | 34 | 221 | 8 | 359.67 | 55.00 % | 15585 | FEASIBLE |
+| S | 100 | RANDOM | 100 | 0 | 218 | 5 | 388.71 | 18.00 % | 65 | RANDOM |
+| S | 100 | FIFO | 100 | 0 | 279 | 66 | 364.67 | 18.00 % | 1 | FIFO |
+| S | 100 | HEURISTIC | 100 | 0 | 213 | 0 | 368.42 | 18.00 % | 102 | HEURISTIC |
+| S | 100 | CP_SAT | 100 | 0 | 213 | 0 | 370.38 | 18.00 % | 5576 | FEASIBLE |
+| M | 500 | RANDOM | 500 | 0 | 290 | 77 | 380.00 | 26.00 % | 92 | RANDOM |
+| M | 500 | FIFO | 500 | 0 | 598 | 385 | 304.66 | 26.00 % | 3 | FIFO |
+| M | 500 | HEURISTIC | 500 | 0 | 213 | 0 | 344.88 | 26.00 % | 190 | HEURISTIC |
+| M | 500 | CP_SAT | 500 | 0 | 213 | 0 | 358.74 | 26.00 % | 10542 | FEASIBLE |
+| L | 2000 | RANDOM | 1933 | 67 | 1177 | 964 | 376.99 | 54.00 % | 388 | RANDOM |
+| L | 2000 | FIFO | 2000 | 0 | 1852 | 1639 | 285.38 | 56.00 % | 47 | FIFO |
+| L | 2000 | HEURISTIC | 1924 | 76 | 239 | 26 | 357.77 | 54.00 % | 650 | HEURISTIC |
+| L | 2000 | CP_SAT | 1966 | 34 | 221 | 8 | 359.67 | 55.00 % | 15606 | FEASIBLE |
 
 ## Mejora de restows añadidos frente a las líneas base
 

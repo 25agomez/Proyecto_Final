@@ -1,6 +1,5 @@
 package cr.logisticaportuaria.fleet.application;
 
-
 import cr.logisticaportuaria.fleet.application.dto.CreateWorkOrderRequest;
 import cr.logisticaportuaria.fleet.application.dto.GeofenceResponse;
 import cr.logisticaportuaria.fleet.application.dto.WorkOrderResponse;
@@ -26,16 +25,19 @@ import org.springframework.web.server.ResponseStatusException;
 /**
  * Lifecycle of the work orders and assignment of the vehicles.
  *
- * <p>Assignment heuristic: the order with the lowest {@code priority} value (more urgent)
- * and then the oldest is dispatched first, and it is given the free vehicle closest to the
- * origin slot (or to the destination, or to the gate zone when the order has no slots).
+ * <p>
+ * Assignment heuristic: the order with the lowest {@code priority} value (more
+ * urgent)
+ * and then the oldest is dispatched first, and it is given the free vehicle
+ * closest to the
+ * origin slot (or to the destination, or to the gate zone when the order has no
+ * slots).
  * Distance is the euclidean distance in the local metric frame (ADR-013).
  */
 @Service
 public class WorkOrderService {
 
-    private static final Set<String> ORDER_TYPES =
-            Set.of("INGRESO", "RETIRO", "REUBICACION", "MOVIMIENTO");
+    private static final Set<String> ORDER_TYPES = Set.of("INGRESO", "RETIRO", "REUBICACION", "MOVIMIENTO");
 
     /** Centroid of the gate zone, used when the order has no slot. */
     private static final double GATE_X = 60.0;
@@ -122,7 +124,8 @@ public class WorkOrderService {
     }
 
     /**
-     * Assigns the most urgent pending order of the yard to its nearest free vehicle.
+     * Assigns the most urgent pending order of the yard to its nearest free
+     * vehicle.
      *
      * @param yardId optional yard
      * @return the order after the assignment, or 404 when there is no pending order
@@ -133,8 +136,8 @@ public class WorkOrderService {
         List<WorkOrderRepository.WorkOrderRow> pending = new ArrayList<>(
                 repository.findByYard(yard, WorkOrderRepository.PENDIENTE));
         Optional<WorkOrderRepository.WorkOrderRow> next = pending.stream()
-                .min(Comparator.comparingInt(WorkOrderRepository.WorkOrderRow::priority)
-                        .thenComparing(WorkOrderRepository.WorkOrderRow::createdAt));
+                .min(Comparator.comparingInt((WorkOrderRepository.WorkOrderRow row) -> row.priority())
+                        .thenComparing(row -> row.createdAt()));
         if (next.isEmpty()) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "no pending work orders");
         }
@@ -231,8 +234,7 @@ public class WorkOrderService {
     }
 
     private UUID nearestFreeVehicle(WorkOrderRepository.WorkOrderRow order) {
-        List<WorkOrderRepository.FreeVehicle> candidates =
-                repository.findFreeVehicles(order.yardId());
+        List<WorkOrderRepository.FreeVehicle> candidates = repository.findFreeVehicles(order.yardId());
         if (candidates.isEmpty()) {
             throw new ResponseStatusException(HttpStatus.CONFLICT, "no free vehicles");
         }
@@ -240,28 +242,36 @@ public class WorkOrderService {
         return candidates.stream()
                 .min(Comparator.comparingDouble(candidate -> TrackGeometry.distance(candidate.x(),
                         candidate.y(), target[0], target[1])))
-                .map(WorkOrderRepository.FreeVehicle::id)
+                .map(candidate -> candidate.id())
                 .orElseThrow();
     }
 
     private double[] target(WorkOrderRepository.WorkOrderRow order) {
-        return origin(order).or(() -> destination(order)).orElse(new double[] {GATE_X, GATE_Y});
+        return origin(order).or(() -> destination(order)).orElse(new double[] { GATE_X, GATE_Y });
     }
 
     private Optional<double[]> origin(WorkOrderRepository.WorkOrderRow order) {
-        return order.fromSlotId() == null ? Optional.empty()
-                : repository.findSlotPosition(order.fromSlotId())
-                        .map(slot -> new double[] {
-                            YardLayout.xOf(slot.blockCode(), slot.bay(), slot.row()),
-                            YardLayout.yOf(slot.row())});
+        if (order.fromSlotId() == null) {
+            return Optional.empty();
+        }
+        return repository.findSlotPosition(order.fromSlotId())
+                .map(slot -> {
+                    double x = YardLayout.xOf(slot.blockCode(), slot.bay(), slot.row());
+                    double y = YardLayout.yOf(slot.row());
+                    return new double[] { x, y };
+                });
     }
 
     private Optional<double[]> destination(WorkOrderRepository.WorkOrderRow order) {
-        return order.toSlotId() == null ? Optional.empty()
-                : repository.findSlotPosition(order.toSlotId())
-                        .map(slot -> new double[] {
-                            YardLayout.xOf(slot.blockCode(), slot.bay(), slot.row()),
-                            YardLayout.yOf(slot.row())});
+        if (order.toSlotId() == null) {
+            return Optional.empty();
+        }
+        return repository.findSlotPosition(order.toSlotId())
+                .map(slot -> {
+                    double x = YardLayout.xOf(slot.blockCode(), slot.bay(), slot.row());
+                    double y = YardLayout.yOf(slot.row());
+                    return new double[] { x, y };
+                });
     }
 
     /**

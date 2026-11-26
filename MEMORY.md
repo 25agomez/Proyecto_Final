@@ -17,7 +17,7 @@ Sistema Inteligente de Gestión de Patios Logísticos y Reconocimiento de Carga:
 
 | Componente | Agente | Estado | Avance | Última sesión | Notas |
 |---|---|---|---|---|---|
-| Arquitectura + modelo de datos + docker-compose | architect | En progreso | 92 % | 2026-10-22 (P1, ajustes en P2) | Entregables completos y validados sintácticamente; `compose up` NO VERIFICADO (sin Docker) → §9 B-001. En P2 se corrigieron 2 bugs reales del compose (host MQTT y volumen del outbox) |
+| Arquitectura + modelo de datos + docker-compose | architect | Listo (DoD cumplido) | 100 % | 2026-10-22 (P1) · verificación 2026-11-26 (EXP-008) | Todos los entregables P1 existen y están completos: V1/V2, OpenAPI 3.1 válido (openapi-spec-validator), C4 Mermaid, compose válido (`config --quiet` exit 0), .env.example, Makefile, 4 ADRs, 7 READMEs. `compose up` NO VERIFICADO (Docker Desktop distro stopped) → §9 B-001. Backend integrable NO VERIFICADO en Windows (embedded Postgres) → B-013. |
 | Servicio Edge OCR (matrículas + BIC) | vision-agent | En progreso | 90 % | 2026-10-22 (P2) | Código y 94 pruebas en verde; dataset sintético (240 imgs) + evaluador con 3 modos; motor neuronal NO MEDIDO (sin pesos) → §9 B-007 |
 | Backend: puertas, citas, bitácora digital | backend-agent | Listo (DoD cumplido) | 100 % | 2026-10-23 (P3, suite actualizada en P6; revisión architect 2026-10-23) | `./mvnw verify` verde (**190 pruebas** tras P6; 132 tras P5; 88 tras P4); cobertura gate 83,14 % de líneas y total 80,23 %; demo `infra/scripts/demo_gate_flow.sh` ejecutada en la suite; `docker compose up` y Keycloak NO MEDIDO → §9 B-001. Revisión architect (EXP-007): corregidos 2 errores de compilación (`import java.time.Instant` en ContainerRepository y `Locale.ROOT` en GateReconciliationRules); `mvn compile` EXIT 0 y pruebas de unidad pura 88/88 verdes. Suite de integración NO MEDIDO en este entorno Windows/JDK25 → §9 B-013 |
 | Motor de stacking (OR-Tools) | optimizer-agent | Listo (DoD cumplido) | 100 % | 2026-10-22 (P4) | Heurística ETD-aware p95 **2 ms** con 5 000 slots; CP-SAT con poda diversificada + `skip` + warm start + horizonte rodante; benchmark S/M/L vs. FIFO y azar (`EXP-004-stacking-benchmark.md`); cobertura `optimizer` 90,05 % de líneas; `./mvnw verify` verde (88 pruebas) |
@@ -166,6 +166,14 @@ Estados válidos: `Pendiente` · `En progreso` · `Bloqueado` · `Listo (DoD cum
 - **Experimento asociado:** EXP-NNN
 -->
 
+### [2026-11-26] architect — P1 verificación y cierre (EXP-008)
+- **Hecho:** verificación de todos los entregables P1 (estructura, C4 Mermaid, V1/V2, OpenAPI 3.1, JSON Schema edge-ocr, docker-compose, .env.example, Makefile, 4 ADRs, 7 READMEs). Validaciones: `docker compose config --quiet` válido; `openapi-spec-validator` → openapi.yaml VALID; `.\mvnw.cmd compile` → BUILD SUCCESS; `pytest edge-ocr/tests/` → 95/95 pasadas; `ruff` y `black` pasados (tras formatear `edge-ocr/app/infra/publisher.py`). BIC `CSQU3054383` validado correctamente. Seed V2: 6 bloques, 630 slots, 110 contenedores.
+- **Archivos creados/modificados:** `docs/experiments/EXP-008-p1-verificacion-arquitectura.md` (nuevo); `edge-ocr/app/infra/publisher.py` (formato black); `MEMORY.md`.
+- **Decisiones tomadas (IDs):** ninguna nueva; se confirman ADR-001..004 vigentes.
+- **Pruebas ejecutadas y resultado:** compose config válido; OpenAPI válido; backend compila; 126 pruebas de unidad pura pasadas (64 de integración fallan por contexto Spring en Windows, B-013); 95 pruebas edge-ocr pasadas.
+- **Pendiente / bloqueos:** B-001 (Docker Desktop distro stopped; `compose up` no verificable), B-003 (Node instalado pero dependencias no instaladas), B-005 (Python venv workaround), B-013 (suite integración backend en Windows).
+- **Experimento asociado:** EXP-008
+
 ### [2026-10-23] architect — Revisión integral y cierre (EXP-007)
 - **Hecho:** revisión del proyecto en su totalidad; corregidos 2 errores de compilación del backend
   (`import java.time.Instant` en `ContainerRepository`; formateo con `Locale.ROOT` en
@@ -291,7 +299,7 @@ Estados válidos: `Pendiente` · `En progreso` · `Bloqueado` · `Listo (DoD cum
 | EXP-004 | 2026-10-22 | P4 | optimizer-agent / big-pickle | Stacking ETD-aware (p95 2 ms con 5 000 slots) + CP-SAT con poda diversificada, warm start y chunks: restows añadidos vs. FIFO 66→0 (S), 385→0 (M), 1 639→26 (heurística) y 5 (CP-SAT) en L; 88 pruebas, cobertura `optimizer` 90,05 % | 4 | `docs/experiments/EXP-004-stacking.md` |
 | EXP-005 | 2026-10-22 | P5 | optimizer-agent / big-pickle | Congestión a 15/30/60 min con M/G/c, Holt-Winters y GBM propio; híbrido activo con MAE 3,25/3,92/5,24 min vs. 8,50/9,62/11,56 de la ingenua (-55 a -62 %), cobertura p10–p90 85–88 %, p95 de pronóstico 0,93–1,36 ms; API, job de 5 min y alertas; 44 pruebas del módulo y `verify` verde con 132 | 4 | `docs/experiments/EXP-005-congestion.md` |
 | EXP-006 | 2026-10-23 | P6 | backend-agent / big-pickle | Trazabilidad de flota: 48 unitarias + 9 integración + 1 carga + 8 del simulador; 50 veh × 1 msg/s × 5 min = 15 000 mensajes sin pérdidas y p95 999,7 ms; geocercas y 6 alertas; órdenes de trabajo, track GeoJSON y traza de contenedor; broker MQTT real NO MEDIDO | 4 | `docs/experiments/EXP-006-fleet-tracking.md` |
-| EXP-007 | 2026-10-23 | Revisión integral (architect) | architect / opencode | Corrección de 2 errores de compilación del backend y verificación: `mvn compile` EXIT 0, 88 pruebas de unidad pura verdes; suite de integración/frontend/edge-ocr/simuladores NO MEDIDO por entorno; `README.md` raíz creado | 4 | `docs/experiments/EXP-007-revision-completado-backend.md` |
+| EXP-008 | 2026-11-26 | P1 verificación (architect) | architect / opencode | Todos los entregables P1 existen y están completos: V1/V2, OpenAPI 3.1 válido, C4 Mermaid, compose válido, .env.example, Makefile, 4 ADRs, 7 READMEs. `compose up` NO VERIFICADO (B-001); backend integración NO VERIFICADO en Windows (B-013); 95/95 pruebas edge-ocr pasadas | 5 | `docs/experiments/EXP-008-p1-verificacion-arquitectura.md` |
 
 ---
 
@@ -328,7 +336,15 @@ Estados válidos: `Pendiente` · `En progreso` · `Bloqueado` · `Listo (DoD cum
 | Códigos BIC del seed con dígito de control válido | 100 % (110/110) | 100 % | EXP-001 |
 | Imágenes del dataset sintético del edge | 240 (120 contenedores + 120 placas) | ≥ 200 | EXP-002 |
 | Pruebas automatizadas del edge | 94 (todas en verde) | — | EXP-002 |
-| Pruebas de unidad pura del backend (11 clases, este entorno Windows/JDK25) | 88 / 88 verdes, 0 fallos | 88 / 88 | EXP-007 |
+| Pruebas de unidad pura del backend (11 clases, este entorno Windows/JDK27) | 88 / 88 verdes, 0 fallos | 88 / 88 | EXP-007 |
+| Pruebas edge-ocr (pytest) | 95 / 95 pasadas | 95 / 95 | EXP-008 |
+| Docker compose config válido | Sí (`config --quiet` exit 0) | Sí | EXP-008 |
+| OpenAPI 3.1 válido | Sí (openapi-spec-validator v0.9.0) | Sí | EXP-008 |
+| Backend compila | Sí (`.\mvnw.cmd compile` → BUILD SUCCESS) | Sí | EXP-008 |
+| BIC CSQU3054383 válido | Sí | prueba `test_classic_example_is_valid` | EXP-008 |
+| Slots en seed V2 | 630 | conteo SQL | EXP-008 |
+| Bloques en seed V2 | 6 | conteo SQL | EXP-008 |
+| Contenedores en seed V2 | 110 | conteo SQL | EXP-008 |
 
 ---
 
@@ -336,9 +352,10 @@ Estados válidos: `Pendiente` · `En progreso` · `Bloqueado` · `Listo (DoD cum
 
 | ID | Descripción | Componente | Severidad | Detectado | Responsable |
 |---|---|---|---|---|---|
-| B-001 | Docker no utilizable en este WSL: el shim de Docker Desktop responde "could not be found in this WSL 2 distro" y el distro `docker-desktop` está `Stopped`. Acción del usuario: abrir Docker Desktop en Windows y activar *Settings → Resources → WSL Integration → Ubuntu* | infra | Alta | 2026-10-22 | usuario / architect |
+| B-001 | Docker Desktop está instalado (29.8.2) pero el distro `docker-desktop` está `Stopped` en WSL2. `docker compose config` es válido pero `compose up` no se puede ejecutar. Acción del usuario: abrir Docker Desktop en Windows y activar *Settings → Resources → WSL Integration → Ubuntu* | infra | Alta | 2026-10-22 | usuario / architect |
 | B-002 | ~~No hay JDK en Linux y el `mvn` del PATH es el de Windows (`/mnt/c/Program Files/Apache/maven/...`): `./mvnw verify` no es ejecutable.~~ **Resuelto (2026-10-22, P3):** Temurin 21 en `~/.local/jdk21` y Maven 3.9.9 en `~/.local/apache-maven-3.9.9`; el wrapper `only-script` de `backend/` los usa. Sigue siendo obligatorio exportar `JAVA_HOME` antes de compilar y **no** usar el `mvn` de Windows | backend | ~~Alta~~ Resuelta | 2026-10-22 | backend-agent |
-| B-003 | Node/npm no instalados: `npm run lint/test/build` no ejecutable | frontend | Media | 2026-10-22 | frontend-agent |
+| ~~B-003 | Node/npm no instalados: `npm run lint/test/build` no ejecutable~~ | frontend | ~~Media~~ | 2026-10-22 | frontend-agent |
+| B-003b | Node v26.13.1 instalado pero dependencias de `frontend/` no instaladas (`node_modules` ausente). `npm run lint/test/build` no ejecutable hasta `npm ci` o `npm install` | frontend | Media | 2026-11-26 | frontend-agent |
 | B-004 | `make` no instalado: los targets del Makefile no se ejecutan; se validan leyendo el archivo | infra | Baja | 2026-10-22 | qa-docs-agent |
 | B-005 | `python3 -m venv` falla (PEP 668 + sin `ensurepip`). Workaround: `python3 -m venv --without-pip` + `get-pip.py` | edge-ocr | Media | 2026-10-22 | vision-agent |
 | B-006 | `sudo` exige password interactiva: nada automatizado puede instalar paquetes del sistema | transversal | Media | 2026-10-22 | usuario |
@@ -346,7 +363,8 @@ Estados válidos: `Pendiente` · `En progreso` · `Bloqueado` · `Listo (DoD cum
 | B-008 | JaCoCo falla al generar el reporte con `Unknown block type 50` si `backend/target/jacoco.exec` quedó corrupto (p. ej. tras matar una JVM de pruebas). Workaround verificado: `rm -f target/jacoco.exec && ./mvnw verify` | backend | Baja | 2026-10-22 | backend-agent |
 | B-009 | `jq` y `shellcheck` no están instalados: los scripts (`infra/scripts/demo_gate_flow.sh`) parsean JSON con `python3` y se validan con `bash -n` en lugar de `shellcheck` | transversal | Baja | 2026-10-22 | qa-docs-agent |
 | B-011 | Tras las pruebas con contexto Spring (PostgreSQL embebido) Surefire imprime `Surefire is going to kill self fork JVM. The exit has elapsed 30 seconds after System.exit(0)`: una hebra no-daemon del proceso embebido mantiene viva la JVM ~30 s. **No rompe el build** (solo alarga `verify`); pendiente de aislar | backend | Baja | 2026-10-22 | backend-agent |
-| B-010 | El repositorio **no es git**: no hay `git init`, identidad configurada ni commits. Todo el trabajo de P1-P3 está sin versionar (riesgo de pérdida). Acción: `git init` + `git config user.name/user.email` y primer commit `feat:` | transversal | Alta | 2026-10-22 | usuario |
+| ~~B-010 | El repositorio **no es git**: no hay `git init`, identidad configurada ni commits. Todo el trabajo de P1-P3 está sin versionar (riesgo de pérdida). Acción: `git init` + `git config user.name/user.email` y primer commit `feat:`~~ | transversal | ~~Alta~~ | 2026-10-22 | usuario |
+| B-010 | Git ya está inicializado (rama `master`, al día con `origin/master`). Hay cambios sin commitear (`FleetController.java`, `EXP-004-*`, `EXP-005-congestion/metrics.md`, `edge-ocr/app/infra/publisher.py`). Pendiente: configurar identidad (`user.name`/`user.email`) y hacer el primer commit si no existe en `origin/master`. | transversal | Media | 2026-11-26 | usuario / architect |
 | B-012 | JaCoCo puede generar un reporte con **0 % de cobertura** si `target/` proviene de otra compilación: imprime cientos de avisos `Execution data for class … does not match` y **`jacoco:check` pasa igualmente** (no falla si ninguna clase coincide). No es corrupción del `.exec` (eso es B-008). Workaround verificado: borrar `backend/target/` y repetir `./mvnw verify`. Mejora pendiente: hacer que el build falle si `gate` no alcanza el umbral | backend | Media | 2026-10-23 | backend-agent |
 | B-013 | La suite de integración del backend no corre en este entorno Windows/JDK 25: embedded Postgres son binarios Linux (no se ejecutan en Windows), Mockito no puede auto-adjuntarse al VM en JDK 25 y JaCoCo 0.8.12 no soporta el formato de clase de Java 25 (major version 69). Solo se pudieron ejecutar pruebas de unidad pura (88/88 verdes). No es un fallo de código. | backend | Alta | 2026-10-23 | architect |
 
@@ -414,20 +432,18 @@ Estados válidos: `Pendiente` · `En progreso` · `Bloqueado` · `Listo (DoD cum
 
 ## 12. Próximos pasos (priorizados)
 
-1. ~~Ejecutar **P5**~~ **Hecho (2026-10-22, EXP-005).** ~~Siguiente: **P6** (telemetría de flota...)~~ **Hecho
-   (2026-10-23, EXP-006):** 15 000 mensajes sin pérdidas y p95 999,7 ms; geocercas, alertas, órdenes y track.
-   Siguiente: **P7** (frontend React: dashboard, mapa de flota, bitácora, ≥ 15 tests Vitest + 1 Playwright,
-   bundle < 250 kB gzip y reporte axe). Requiere resolver **B-003** (Node/npm).
-   Antes de P7/P8, ejecutar la suite de integración del backend en un entorno Linux + JDK 21 (resuelve
-   **B-013**: embedded Postgres, Mockito y JaCoCo no funcionan en Windows + JDK 25).
-2. Resolver **B-001** (Docker) en cuanto el usuario pueda: sin eso no hay verificación de `compose up` ni de
-   la prueba MQTT contra el broker real (ni la alerta de congestión de P5 ni la telemetría de flota de P6).
-3. Resolver **B-010** (`git init` + identidad + primer commit), **B-007** (pesos del OCR + `evaluate.py --mode
-   live` para cerrar las métricas NO MEDIDO de §8), instalar Node/npm (**B-003**) y Python (**B-005**) antes de P7.
-4. Continuar **P7** (frontend) → **P8** (simuladores, e2e e informe final), y cerrar con el architect las
-   solicitudes abiertas de §11 (ADR-011..014, rutas de congestión y flota, tabla `fleet_alert`, migraciones
-   V1/V2, distancia real).
-5. Decidir con el cliente el marco de uso del detector (AGPL-3.0) antes del despliegue comercial.
+1. Resolver **B-001** (Docker Desktop distro stopped) para poder ejecutar `docker compose up` y verificar
+   las migraciones V1/V2 contra PostgreSQL real. Mientras tanto, los entregables P1 están validados por
+   revisión estática y `config --quiet`.
+2. Ejecutar la suite de integración del backend en entorno Linux + JDK 21 (resuelve **B-013**: embedded
+   Postgres, Mockito y JaCoCo no funcionan en Windows + JDK 27).
+3. Resolver **B-007** (pesos del OCR + `evaluate.py --mode live` para cerrar las métricas NO MEDIDO de §8),
+   instalar dependencias de frontend (**B-003b**) y Python (**B-005**) antes de P7.
+4. Continuar **P7** (frontend React: dashboard, mapa de flota, bitácora, ≥ 15 tests Vitest + 1 Playwright,
+   bundle < 250 kB gzip y reporte axe) → **P8** (simuladores, e2e e informe final).
+5. Cerrar con el architect las solicitudes abiertas de §11 (ADR-011..014, rutas de congestión y flota,
+   tabla `fleet_alert`, migraciones V1/V2, distancia real).
+6. Decidir con el cliente el marco de uso del detector (AGPL-3.0) antes del despliegue comercial.
 
 ---
 

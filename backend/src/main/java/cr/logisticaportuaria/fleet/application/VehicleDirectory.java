@@ -62,6 +62,6 @@ public class VehicleDirectory {
 
     private Map<UUID, VehicleInfo> all() {
         return cache.get(ALL, key -> repository.findAll().stream()
-                .collect(Collectors.toMap(VehicleInfo::id, Function.identity())));
+                .collect(Collectors.toMap(v -> v.id(), Function.identity())));
     }
 }

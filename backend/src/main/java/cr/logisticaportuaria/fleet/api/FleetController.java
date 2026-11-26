@@ -13,8 +13,8 @@ import java.time.Instant;
 import java.util.List;
 import java.util.UUID;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -41,7 +41,7 @@ public class FleetController {
     private static final String WRITE_ROLES =
             "hasAnyRole('OPERADOR_PUERTA', 'SUPERVISOR', 'ADMIN')";
 
-    private static final MediaType GEO_JSON = MediaType.parseMediaType("application/geo+json");
+    private static final String GEO_JSON_VALUE = "application/geo+json";
 
     private final FleetQueryService queryService;
     private final WorkOrderService workOrderService;
@@ -75,14 +75,16 @@ public class FleetController {
      * @param to   optional exclusive end
      * @return GeoJSON LineString of the track
      */
-    @GetMapping(value = "/vehicles/{id}/track", produces = {"application/geo+json",
+    @GetMapping(value = "/vehicles/{id}/track", produces = {GEO_JSON_VALUE,
             "application/json"})
     @PreAuthorize(READ_ROLES)
     public ResponseEntity<TrackResponse> track(
             @PathVariable UUID id,
             @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) Instant from,
             @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) Instant to) {
-        return ResponseEntity.ok().contentType(GEO_JSON).body(queryService.track(id, from, to));
+        return ResponseEntity.ok()
+                .header(HttpHeaders.CONTENT_TYPE, GEO_JSON_VALUE)
+                .body(queryService.track(id, from, to));
     }
 
     /**

@@ -59,9 +59,7 @@ class EventPublisher:
             return None
         client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
         try:
-            client.connect(
-                self.settings.mqtt_host, self.settings.mqtt_port, keepalive=30
-            )
+            client.connect(self.settings.mqtt_host, self.settings.mqtt_port, keepalive=30)
             client.loop_start()
             self._mqtt_connected = True
         except Exception as error:  # pragma: no cover - depends on the broker
@@ -84,9 +82,7 @@ class EventPublisher:
         client = self._ensure_mqtt()
         if client is None:
             if not self._warned_mqtt:
-                logger.warning(
-                    "MQTT client unavailable; events are delivered over HTTP only"
-                )
+                logger.warning("MQTT client unavailable; events are delivered over HTTP only")
                 self._warned_mqtt = True
             return True, None
         gate_id = str(item.payload.get("gateId", self.settings.gate_id))
@@ -154,9 +150,7 @@ class EventPublisher:
         if self._worker is not None:
             return
         self._stop.clear()
-        self._worker = threading.Thread(
-            target=self._run, name="outbox-worker", daemon=True
-        )
+        self._worker = threading.Thread(target=self._run, name="outbox-worker", daemon=True)
         self._worker.start()
 
     def stop(self) -> None:

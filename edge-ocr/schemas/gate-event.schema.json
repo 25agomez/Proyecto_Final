@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://logisticaportuaria.cr/schemas/gate-event.schema.json",
+  "title": "GateEvent",
+  "description": "Evento de lectura publicado por edge-ocr (HTTP POST /api/v1/gate-events y MQTT yard/{yardId}/gate/{gateId}/events).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["eventId", "gateId", "timestamp", "kind"],
+  "properties": {
+    "eventId": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Identificador unico del evento: base de la idempotencia en la ingesta."
+    },
+    "yardId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "gateId": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Puerta donde se produjo la lectura."
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Instante de la lectura en UTC (ISO 8601)."
+    },
+    "kind": {
+      "type": "string",
+      "enum": ["PLATE", "CONTAINER"],
+      "description": "PLATE = matricula de vehiculo; CONTAINER = codigo BIC ISO 6346."
+    },
+    "rawText": {
+      "type": "string",
+      "description": "Texto tal como lo devuelve el OCR, sin normalizar."
+    },
+    "normalizedText": {
+      "type": "string",
+      "description": "Texto normalizado: PLATE en mayusculas sin guiones; CONTAINER en mayusculas sin espacios."
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Confianza media por caracter reportada por el modelo."
+    },
+    "isoValid": {
+      "type": "boolean",
+      "description": "Resultado de validar el digito de control ISO 6346 (null si no aplica a kind=PLATE)."
+    },
+    "corrected": {
+      "type": "boolean",
+      "default": false,
+      "description": "true si el digito de control se hizo valido corrigiendo un unico caracter."
+    },
+    "bbox": {
+      "type": "object",
+      "description": "Caja orientada (OBB) del recorte detectado, en pixeles de la imagen original.",
+      "additionalProperties": false,
+      "properties": {
+        "points": {
+          "type": "array",
+          "items": { "type": "number" },
+          "minItems": 8,
+          "maxItems": 8,
+          "description": "4 pares (x, y) en el orden de la caja orientada."
+        },
+        "score": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "evidenceImagePath": {
+      "type": "string",
+      "description": "Ruta relativa de la evidencia dentro del volumen de edge-ocr (TTL configurable)."
+    },
+    "modelVersion": {
+      "type": "string",
+      "description": "Version de los pesos usados (detector@version,ocr@version)."
+    },
+    "latencyMs": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Latencia de procesamiento del frame, en milisegundos."
+    }
+  }
+}

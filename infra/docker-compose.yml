@@ -1,0 +1,177 @@
+name: logisticaportuaria-cr
+
+# Local development stack: docker compose up -d
+# Every service is 100% open source and runs on a local Linux host.
+
+x-logging: &default-logging
+  driver: json-file
+  options:
+    max-size: "10m"
+    max-file: "3"
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: lp-postgres
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-logisticaportuaria}
+      POSTGRES_USER: ${POSTGRES_USER:-lp_app}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-lp_dev_password}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-lp_app} -d ${POSTGRES_DB:-logisticaportuaria}"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 10s
+    networks: [lp-internal]
+    logging: *default-logging
+
+  mosquitto:
+    image: eclipse-mosquitto:2
+    container_name: lp-mosquitto
+    ports:
+      - "${MOSQUITTO_PORT:-1883}:1883"
+      - "${MOSQUITTO_WS_PORT:-9001}:9001"
+    volumes:
+      - ./mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+    healthcheck:
+      test: ["CMD-SHELL", "mosquitto_sub -h localhost -p 1883 -t '$$SYS/#' -C 1 -W 5 >/dev/null 2>&1 || exit 1"]
+      interval: 10s
+      timeout: 10s
+      retries: 10
+    networks: [lp-internal]
+    logging: *default-logging
+
+  edge-ocr:
+    build:
+      context: ../edge-ocr
+      dockerfile: Dockerfile
+      args:
+        VARIANT: ${EDGE_OCR_VARIANT:-cpu}
+    container_name: lp-edge-ocr
+    environment:
+      YARD_ID: ${YARD_ID:-11111111-1111-7111-8111-111111111111}
+      BACKEND_BASE_URL: ${BACKEND_BASE_URL:-http://backend:8080}
+      MQTT_HOST: mosquitto
+      MQTT_PORT: 1883
+      GATE_ID: ${GATE_ID:-33333333-3333-7333-8333-333333333331}
+      MODELS_DIR: /models
+      EVIDENCE_DIR: /evidence
+      EVIDENCE_RETENTION_DAYS: ${EVIDENCE_RETENTION_DAYS:-7}
+      FACE_BLUR_ENABLED: ${FACE_BLUR_ENABLED:-true}
+      RECOGNIZE_CONFIDENCE_THRESHOLD: ${RECOGNIZE_CONFIDENCE_THRESHOLD:-0.75}
+      OUTBOX_PATH: ${OUTBOX_PATH:-/app/data/outbox.db}
+    ports:
+      - "${EDGE_OCR_PORT:-8001}:8001"
+    volumes:
+      - edge-models:/models:ro
+      - edge-evidence:/evidence
+      - edge-outbox:/app/data
+    depends_on:
+      postgres:
+        condition: service_healthy
+      mosquitto:
+        condition: service_started
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request;urllib.request.urlopen('http://localhost:8001/healthz').read()"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    networks: [lp-internal]
+    logging: *default-logging
+
+  backend:
+    build:
+      context: ../backend
+      dockerfile: Dockerfile
+    container_name: lp-backend
+    environment:
+      SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE:-dev}
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${POSTGRES_DB:-logisticaportuaria}
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER:-lp_app}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD:-lp_dev_password}
+      MQTT_HOST: mosquitto
+      MQTT_PORT: 1883
+      YARD_ID: ${YARD_ID:-11111111-1111-7111-8111-111111111111}
+      CORS_ALLOWED_ORIGINS: ${CORS_ALLOWED_ORIGINS:-http://localhost:5173,http://localhost:8088}
+      JWT_SECRET: ${JWT_SECRET:-change-me-in-production-please-32b}
+    ports:
+      - "${BACKEND_PORT:-8080}:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      mosquitto:
+        condition: service_started
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:8080/actuator/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+      start_period: 40s
+    networks: [lp-internal]
+    logging: *default-logging
+
+  frontend:
+    build:
+      context: ../frontend
+      dockerfile: Dockerfile
+    container_name: lp-frontend
+    environment:
+      NGINX_BACKEND_UPSTREAM: backend:8080
+    ports:
+      - "${FRONTEND_PORT:-8088}:80"
+    depends_on:
+      backend:
+        condition: service_started
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost/"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+    networks: [lp-internal]
+    logging: *default-logging
+
+  prometheus:
+    image: prom/prometheus:v2.53.0
+    container_name: lp-prometheus
+    profiles: [observability]
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.retention.time=7d
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    ports:
+      - "${PROMETHEUS_PORT:-9090}:9090"
+    networks: [lp-internal]
+    logging: *default-logging
+
+  grafana:
+    image: grafana/grafana:11.1.0
+    container_name: lp-grafana
+    profiles: [observability]
+    environment:
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
+      GF_AUTH_ANONYMOUS_ORG_ROLE: Viewer
+    volumes:
+      - grafana-data:/var/lib/grafana
+    ports:
+      - "${GRAFANA_PORT:-3000}:3000"
+    depends_on: [prometheus]
+    networks: [lp-internal]
+    logging: *default-logging
+
+networks:
+  lp-internal:
+    driver: bridge
+
+volumes:
+  postgres-data:
+  edge-models:
+  edge-evidence:
+  edge-outbox:
+  grafana-data:

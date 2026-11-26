@@ -1,0 +1,26 @@
+# Perfil de desarrollo local: base de datos de Docker, ingesta abierta y
+# usuarios en memoria para obtener un token JWT.
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/logisticaportuaria}
+    username: ${DB_USER:logisticaportuaria}
+    password: ${DB_PASSWORD:logisticaportuaria}
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+
+app:
+  security:
+    jwt:
+      secret: ${JWT_SECRET:dev-secret-logisticaportuaria-cambiar-en-produccion-0123456789}
+      expires-in-seconds: 3600
+  edge:
+    open-ingestion: true
+  mqtt:
+    enabled: ${MQTT_ENABLED:true}
+    url: ${MQTT_URL:mqtt://localhost:1883}
+
+logging:
+  level:
+    cr.logisticaportuaria: DEBUG

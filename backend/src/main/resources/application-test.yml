@@ -1,0 +1,41 @@
+# Perfil de pruebas: la URL de la base de datos la define la prueba
+# (PostgreSQL embebido de Zonky cuando Docker no está disponible).
+spring:
+  datasource:
+    url: ${TEST_DB_URL:jdbc:postgresql://localhost:5432/logisticaportuaria_test}
+    username: ${TEST_DB_USER:logisticaportuaria}
+    password: ${TEST_DB_PASSWORD:logisticaportuaria}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: false
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    clean-disabled: false
+
+app:
+  mqtt:
+    enabled: false
+  edge:
+    open-ingestion: true
+  security:
+    jwt:
+      secret: test-secret-logisticaportuaria-0123456789abcdefghijklmnop
+  gate:
+    min-confidence: 0.75
+    window-minutes: 30
+  congestion:
+    scheduling-enabled: false
+    alerts-enabled: false
+    retrain-minutes: 60
+  fleet:
+    mqtt-enabled: false
+    scheduling-enabled: false
+
+logging:
+  level:
+    root: WARN
+    cr.logisticaportuaria: INFO

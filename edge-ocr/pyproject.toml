@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "logisticaportuaria-edge-ocr"
+version = "0.1.0"
+description = "Edge OCR service of LogisticaPortuaria CR (plates and BIC container codes)"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.32",
+    "pydantic>=2.10",
+    "pydantic-settings>=2.6",
+    "python-multipart>=0.0.17",
+    "paho-mqtt>=2.1",
+    "httpx>=0.28",
+    "numpy>=2.1",
+    "Pillow>=11.0",
+    "opencv-python-headless>=4.10",
+    "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3", "ruff>=0.8", "black>=24.10"]
+# Heavy inference runtimes (installed in the image that mounts the weights).
+models = ["ultralytics>=8.3", "paddleocr>=2.9", "paddlepaddle>=2.6"]
+
+[tool.setuptools]
+packages = ["app"]
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+exclude = ["data", ".pytest_cache"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "N"]
+ignore = [
+    "N802",  # FastAPI routes use camelCase function names on purpose
+    "N815",  # The DTO fields follow the camelCase contract of the API
+    "UP042", # `str, Enum` is kept on purpose: the JSON contract must not change
+    "B008",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-ra"

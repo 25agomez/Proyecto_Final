@@ -1,0 +1,2421 @@
+{
+  "mode": "preprocess",
+  "samples": 240,
+  "containers": 0,
+  "plates": 0,
+  "notMeasured": null,
+  "rawExactMatchPct": 0.0,
+  "exactMatchPct": 0.0,
+  "cerRaw": 0.0,
+  "cerFinal": 0.0,
+  "checkDigitValidPct": 0.0,
+  "correctedPct": 0.0,
+  "invalidPct": 0.0,
+  "latencyP50Ms": 7.093,
+  "latencyP95Ms": 11.456,
+  "latencyMeanMs": 8.25,
+  "dataset": "data/synthetic",
+  "seed": 20260222,
+  "samplesDetail": [
+    {
+      "id": "0000",
+      "kind": "CONTAINER",
+      "truth": "FUZZ1761001",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 29.1066
+    },
+    {
+      "id": "0001",
+      "kind": "PLATE",
+      "truth": "P340114",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 8.8789
+    },
+    {
+      "id": "0002",
+      "kind": "CONTAINER",
+      "truth": "VQCZ6408778",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 8.4313
+    },
+    {
+      "id": "0003",
+      "kind": "PLATE",
+      "truth": "P265814",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.9833
+    },
+    {
+      "id": "0004",
+      "kind": "CONTAINER",
+      "truth": "BMWJ4289671",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.3923
+    },
+    {
+      "id": "0005",
+      "kind": "PLATE",
+      "truth": "AB58860",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.9065
+    },
+    {
+      "id": "0006",
+      "kind": "CONTAINER",
+      "truth": "SELU7969676",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.9808
+    },
+    {
+      "id": "0007",
+      "kind": "PLATE",
+      "truth": "P569407",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 9.7583
+    },
+    {
+      "id": "0008",
+      "kind": "CONTAINER",
+      "truth": "NVEZ2316903",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.7238
+    },
+    {
+      "id": "0009",
+      "kind": "PLATE",
+      "truth": "ABC9191",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.8352
+    },
+    {
+      "id": "0010",
+      "kind": "CONTAINER",
+      "truth": "AQZJ8219025",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.9364
+    },
+    {
+      "id": "0011",
+      "kind": "PLATE",
+      "truth": "AB01560",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.5926
+    },
+    {
+      "id": "0012",
+      "kind": "CONTAINER",
+      "truth": "KZJZ2796912",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.1618
+    },
+    {
+      "id": "0013",
+      "kind": "PLATE",
+      "truth": "P984940",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.5503
+    },
+    {
+      "id": "0014",
+      "kind": "CONTAINER",
+      "truth": "LLVJ6707857",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 12.0314
+    },
+    {
+      "id": "0015",
+      "kind": "PLATE",
+      "truth": "ABC7227",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.8282
+    },
+    {
+      "id": "0016",
+      "kind": "CONTAINER",
+      "truth": "NLPZ5229344",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.7089
+    },
+    {
+      "id": "0017",
+      "kind": "PLATE",
+      "truth": "P022380",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.6073
+    },
+    {
+      "id": "0018",
+      "kind": "CONTAINER",
+      "truth": "CFLU2817337",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.1066
+    },
+    {
+      "id": "0019",
+      "kind": "PLATE",
+      "truth": "ABC5649",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 11.4347
+    },
+    {
+      "id": "0020",
+      "kind": "CONTAINER",
+      "truth": "UVXZ2445225",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 7.0216
+    },
+    {
+      "id": "0021",
+      "kind": "PLATE",
+      "truth": "AB92082",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.78
+    },
+    {
+      "id": "0022",
+      "kind": "CONTAINER",
+      "truth": "JVCJ5685292",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.9418
+    },
+    {
+      "id": "0023",
+      "kind": "PLATE",
+      "truth": "ABC1192",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 11.116
+    },
+    {
+      "id": "0024",
+      "kind": "CONTAINER",
+      "truth": "QAMU4308696",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 9.5473
+    },
+    {
+      "id": "0025",
+      "kind": "PLATE",
+      "truth": "P181265",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.8118
+    },
+    {
+      "id": "0026",
+      "kind": "CONTAINER",
+      "truth": "MGKU9234742",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.4291
+    },
+    {
+      "id": "0027",
+      "kind": "PLATE",
+      "truth": "AB05502",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 13.6662
+    },
+    {
+      "id": "0028",
+      "kind": "CONTAINER",
+      "truth": "SRKZ3083104",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.8351
+    },
+    {
+      "id": "0029",
+      "kind": "PLATE",
+      "truth": "AB35356",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.5685
+    },
+    {
+      "id": "0030",
+      "kind": "CONTAINER",
+      "truth": "BGAU3385648",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.5926
+    },
+    {
+      "id": "0031",
+      "kind": "PLATE",
+      "truth": "P142976",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.7482
+    },
+    {
+      "id": "0032",
+      "kind": "CONTAINER",
+      "truth": "PVDJ5706564",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.6258
+    },
+    {
+      "id": "0033",
+      "kind": "PLATE",
+      "truth": "ABC3628",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.822
+    },
+    {
+      "id": "0034",
+      "kind": "CONTAINER",
+      "truth": "EBLJ9446718",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 11.4563
+    },
+    {
+      "id": "0035",
+      "kind": "PLATE",
+      "truth": "ABC0296",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.7567
+    },
+    {
+      "id": "0036",
+      "kind": "CONTAINER",
+      "truth": "QCKU6932155",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.8627
+    },
+    {
+      "id": "0037",
+      "kind": "PLATE",
+      "truth": "ABC9867",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.7173
+    },
+    {
+      "id": "0038",
+      "kind": "CONTAINER",
+      "truth": "KUOU3396604",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.619
+    },
+    {
+      "id": "0039",
+      "kind": "PLATE",
+      "truth": "AB59873",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 11.7443
+    },
+    {
+      "id": "0040",
+      "kind": "CONTAINER",
+      "truth": "PFMJ3258504",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 7.1765
+    },
+    {
+      "id": "0041",
+      "kind": "PLATE",
+      "truth": "ABC0784",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.7631
+    },
+    {
+      "id": "0042",
+      "kind": "CONTAINER",
+      "truth": "JHXZ8704730",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.9068
+    },
+    {
+      "id": "0043",
+      "kind": "PLATE",
+      "truth": "P795067",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.6982
+    },
+    {
+      "id": "0044",
+      "kind": "CONTAINER",
+      "truth": "TROJ6352015",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 11.3178
+    },
+    {
+      "id": "0045",
+      "kind": "PLATE",
+      "truth": "ABC5495",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.7462
+    },
+    {
+      "id": "0046",
+      "kind": "CONTAINER",
+      "truth": "HFXU7342719",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.6772
+    },
+    {
+      "id": "0047",
+      "kind": "PLATE",
+      "truth": "P012331",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 7.1594
+    },
+    {
+      "id": "0048",
+      "kind": "CONTAINER",
+      "truth": "GTCJ7713081",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 11.4291
+    },
+    {
+      "id": "0049",
+      "kind": "PLATE",
+      "truth": "P766071",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.774
+    },
+    {
+      "id": "0050",
+      "kind": "CONTAINER",
+      "truth": "CDNJ5381243",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.6301
+    },
+    {
+      "id": "0051",
+      "kind": "PLATE",
+      "truth": "ABC1289",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 7.1822
+    },
+    {
+      "id": "0052",
+      "kind": "CONTAINER",
+      "truth": "URPJ3008438",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 11.207
+    },
+    {
+      "id": "0053",
+      "kind": "PLATE",
+      "truth": "P019629",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.1154
+    },
+    {
+      "id": "0054",
+      "kind": "CONTAINER",
+      "truth": "VIIZ3467242",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 7.4173
+    },
+    {
+      "id": "0055",
+      "kind": "PLATE",
+      "truth": "ABC7415",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.4984
+    },
+    {
+      "id": "0056",
+      "kind": "CONTAINER",
+      "truth": "CSPZ5619236",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 9.8153
+    },
+    {
+      "id": "0057",
+      "kind": "PLATE",
+      "truth": "P147157",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 7.5685
+    },
+    {
+      "id": "0058",
+      "kind": "CONTAINER",
+      "truth": "MXYZ8482400",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.932
+    },
+    {
+      "id": "0059",
+      "kind": "PLATE",
+      "truth": "AB37467",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.5212
+    },
+    {
+      "id": "0060",
+      "kind": "CONTAINER",
+      "truth": "KRBU1103737",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.5535
+    },
+    {
+      "id": "0061",
+      "kind": "PLATE",
+      "truth": "AB32419",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.9926
+    },
+    {
+      "id": "0062",
+      "kind": "CONTAINER",
+      "truth": "TNDU8310479",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.7618
+    },
+    {
+      "id": "0063",
+      "kind": "PLATE",
+      "truth": "ABC9524",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 11.6925
+    },
+    {
+      "id": "0064",
+      "kind": "CONTAINER",
+      "truth": "BZUZ7368229",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 7.1195
+    },
+    {
+      "id": "0065",
+      "kind": "PLATE",
+      "truth": "AB39697",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.8314
+    },
+    {
+      "id": "0066",
+      "kind": "CONTAINER",
+      "truth": "AXUJ5788020",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.8666
+    },
+    {
+      "id": "0067",
+      "kind": "PLATE",
+      "truth": "AB09341",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 11.623
+    },
+    {
+      "id": "0068",
+      "kind": "CONTAINER",
+      "truth": "OUVZ0650456",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 9.622
+    },
+    {
+      "id": "0069",
+      "kind": "PLATE",
+      "truth": "ABC1768",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.8469
+    },
+    {
+      "id": "0070",
+      "kind": "CONTAINER",
+      "truth": "LSVU4253436",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 11.0974
+    },
+    {
+      "id": "0071",
+      "kind": "PLATE",
+      "truth": "ABC4379",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.2452
+    },
+    {
+      "id": "0072",
+      "kind": "CONTAINER",
+      "truth": "DHIJ1620346",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.7256
+    },
+    {
+      "id": "0073",
+      "kind": "PLATE",
+      "truth": "ABC6013",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.6158
+    },
+    {
+      "id": "0074",
+      "kind": "CONTAINER",
+      "truth": "SLFZ8997320",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 9.8969
+    },
+    {
+      "id": "0075",
+      "kind": "PLATE",
+      "truth": "P412653",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 7.0252
+    },
+    {
+      "id": "0076",
+      "kind": "CONTAINER",
+      "truth": "TEIZ6557720",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.5047
+    },
+    {
+      "id": "0077",
+      "kind": "PLATE",
+      "truth": "P709338",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 9.9092
+    },
+    {
+      "id": "0078",
+      "kind": "CONTAINER",
+      "truth": "JEOJ7489795",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 7.0053
+    },
+    {
+      "id": "0079",
+      "kind": "PLATE",
+      "truth": "ABC2249",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.5812
+    },
+    {
+      "id": "0080",
+      "kind": "CONTAINER",
+      "truth": "AASJ0712199",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 13.3935
+    },
+    {
+      "id": "0081",
+      "kind": "PLATE",
+      "truth": "P756223",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.8381
+    },
+    {
+      "id": "0082",
+      "kind": "CONTAINER",
+      "truth": "JJGU5646522",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.311
+    },
+    {
+      "id": "0083",
+      "kind": "PLATE",
+      "truth": "AB06275",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 9.8754
+    },
+    {
+      "id": "0084",
+      "kind": "CONTAINER",
+      "truth": "RFSJ9868832",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 7.0935
+    },
+    {
+      "id": "0085",
+      "kind": "PLATE",
+      "truth": "ABC2261",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.4028
+    },
+    {
+      "id": "0086",
+      "kind": "CONTAINER",
+      "truth": "GKNZ2689667",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.3032
+    },
+    {
+      "id": "0087",
+      "kind": "PLATE",
+      "truth": "P544787",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 7.0619
+    },
+    {
+      "id": "0088",
+      "kind": "CONTAINER",
+      "truth": "EFUZ4017199",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.1529
+    },
+    {
+      "id": "0089",
+      "kind": "PLATE",
+      "truth": "P389325",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 9.4335
+    },
+    {
+      "id": "0090",
+      "kind": "CONTAINER",
+      "truth": "GSAZ0464684",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.7259
+    },
+    {
+      "id": "0091",
+      "kind": "PLATE",
+      "truth": "AB68995",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.4227
+    },
+    {
+      "id": "0092",
+      "kind": "CONTAINER",
+      "truth": "NYOJ6045574",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 9.5709
+    },
+    {
+      "id": "0093",
+      "kind": "PLATE",
+      "truth": "ABC4151",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 7.1713
+    },
+    {
+      "id": "0094",
+      "kind": "CONTAINER",
+      "truth": "HQIJ4131525",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.209
+    },
+    {
+      "id": "0095",
+      "kind": "PLATE",
+      "truth": "AB91670",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 9.6532
+    },
+    {
+      "id": "0096",
+      "kind": "CONTAINER",
+      "truth": "GCQJ9095430",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.7793
+    },
+    {
+      "id": "0097",
+      "kind": "PLATE",
+      "truth": "ABC8632",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.7877
+    },
+    {
+      "id": "0098",
+      "kind": "CONTAINER",
+      "truth": "OTWJ1151880",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.0768
+    },
+    {
+      "id": "0099",
+      "kind": "PLATE",
+      "truth": "P407541",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.9303
+    },
+    {
+      "id": "0100",
+      "kind": "CONTAINER",
+      "truth": "HMWU0160415",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.6173
+    },
+    {
+      "id": "0101",
+      "kind": "PLATE",
+      "truth": "ABC3474",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 9.9491
+    },
+    {
+      "id": "0102",
+      "kind": "CONTAINER",
+      "truth": "WWYJ3009352",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 7.504
+    },
+    {
+      "id": "0103",
+      "kind": "PLATE",
+      "truth": "ABC4112",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.747
+    },
+    {
+      "id": "0104",
+      "kind": "CONTAINER",
+      "truth": "HCLU7632931",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.1973
+    },
+    {
+      "id": "0105",
+      "kind": "PLATE",
+      "truth": "AB18810",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 7.0182
+    },
+    {
+      "id": "0106",
+      "kind": "CONTAINER",
+      "truth": "BJLJ7271119",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.4178
+    },
+    {
+      "id": "0107",
+      "kind": "PLATE",
+      "truth": "AB74966",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.1356
+    },
+    {
+      "id": "0108",
+      "kind": "CONTAINER",
+      "truth": "RQTZ2436582",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 7.2042
+    },
+    {
+      "id": "0109",
+      "kind": "PLATE",
+      "truth": "AB70342",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.7422
+    },
+    {
+      "id": "0110",
+      "kind": "CONTAINER",
+      "truth": "IBLZ3757846",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 13.4117
+    },
+    {
+      "id": "0111",
+      "kind": "PLATE",
+      "truth": "AB80472",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.8777
+    },
+    {
+      "id": "0112",
+      "kind": "CONTAINER",
+      "truth": "UXRJ0081271",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.3174
+    },
+    {
+      "id": "0113",
+      "kind": "PLATE",
+      "truth": "AB80127",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 13.0418
+    },
+    {
+      "id": "0114",
+      "kind": "CONTAINER",
+      "truth": "TACZ3651290",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.9047
+    },
+    {
+      "id": "0115",
+      "kind": "PLATE",
+      "truth": "AB13826",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.2712
+    },
+    {
+      "id": "0116",
+      "kind": "CONTAINER",
+      "truth": "VZDJ5899030",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 9.4946
+    },
+    {
+      "id": "0117",
+      "kind": "PLATE",
+      "truth": "AB73475",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.7132
+    },
+    {
+      "id": "0118",
+      "kind": "CONTAINER",
+      "truth": "NLQU6618741",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.3767
+    },
+    {
+      "id": "0119",
+      "kind": "PLATE",
+      "truth": "ABC0817",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 9.6428
+    },
+    {
+      "id": "0120",
+      "kind": "CONTAINER",
+      "truth": "ZHHJ3146506",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.8979
+    },
+    {
+      "id": "0121",
+      "kind": "PLATE",
+      "truth": "AB24630",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.5592
+    },
+    {
+      "id": "0122",
+      "kind": "CONTAINER",
+      "truth": "PCWZ1585083",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 13.4705
+    },
+    {
+      "id": "0123",
+      "kind": "PLATE",
+      "truth": "P329901",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 7.3324
+    },
+    {
+      "id": "0124",
+      "kind": "CONTAINER",
+      "truth": "EHDJ5462637",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.4485
+    },
+    {
+      "id": "0125",
+      "kind": "PLATE",
+      "truth": "ABC3462",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 9.6716
+    },
+    {
+      "id": "0126",
+      "kind": "CONTAINER",
+      "truth": "IZMJ5166056",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.8814
+    },
+    {
+      "id": "0127",
+      "kind": "PLATE",
+      "truth": "ABC1977",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.3596
+    },
+    {
+      "id": "0128",
+      "kind": "CONTAINER",
+      "truth": "GQCJ6918380",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 9.7499
+    },
+    {
+      "id": "0129",
+      "kind": "PLATE",
+      "truth": "P415714",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.9359
+    },
+    {
+      "id": "0130",
+      "kind": "CONTAINER",
+      "truth": "CCDJ9881630",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.6477
+    },
+    {
+      "id": "0131",
+      "kind": "PLATE",
+      "truth": "ABC8066",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 9.9225
+    },
+    {
+      "id": "0132",
+      "kind": "CONTAINER",
+      "truth": "GHNU6598226",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.9201
+    },
+    {
+      "id": "0133",
+      "kind": "PLATE",
+      "truth": "P263589",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.7057
+    },
+    {
+      "id": "0134",
+      "kind": "CONTAINER",
+      "truth": "PBCU3765319",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 9.8839
+    },
+    {
+      "id": "0135",
+      "kind": "PLATE",
+      "truth": "ABC8439",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.9795
+    },
+    {
+      "id": "0136",
+      "kind": "CONTAINER",
+      "truth": "RHXJ3249142",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 11.3061
+    },
+    {
+      "id": "0137",
+      "kind": "PLATE",
+      "truth": "AB08117",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 13.1817
+    },
+    {
+      "id": "0138",
+      "kind": "CONTAINER",
+      "truth": "AHPU9293601",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.9118
+    },
+    {
+      "id": "0139",
+      "kind": "PLATE",
+      "truth": "ABC0083",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.6764
+    },
+    {
+      "id": "0140",
+      "kind": "CONTAINER",
+      "truth": "CNTU1679497",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 9.8873
+    },
+    {
+      "id": "0141",
+      "kind": "PLATE",
+      "truth": "P067081",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 8.0638
+    },
+    {
+      "id": "0142",
+      "kind": "CONTAINER",
+      "truth": "MHEZ1341012",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.4569
+    },
+    {
+      "id": "0143",
+      "kind": "PLATE",
+      "truth": "P399596",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 9.563
+    },
+    {
+      "id": "0144",
+      "kind": "CONTAINER",
+      "truth": "UUMZ9930190",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.6923
+    },
+    {
+      "id": "0145",
+      "kind": "PLATE",
+      "truth": "ABC3378",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.4933
+    },
+    {
+      "id": "0146",
+      "kind": "CONTAINER",
+      "truth": "KQLJ2204424",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 9.7885
+    },
+    {
+      "id": "0147",
+      "kind": "PLATE",
+      "truth": "ABC6813",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 7.065
+    },
+    {
+      "id": "0148",
+      "kind": "CONTAINER",
+      "truth": "EVEU1669821",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.2104
+    },
+    {
+      "id": "0149",
+      "kind": "PLATE",
+      "truth": "AB55415",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 9.6892
+    },
+    {
+      "id": "0150",
+      "kind": "CONTAINER",
+      "truth": "WIJJ4017182",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.9858
+    },
+    {
+      "id": "0151",
+      "kind": "PLATE",
+      "truth": "AB99905",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.4971
+    },
+    {
+      "id": "0152",
+      "kind": "CONTAINER",
+      "truth": "WLYZ5221586",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.1476
+    },
+    {
+      "id": "0153",
+      "kind": "PLATE",
+      "truth": "ABC1767",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.9838
+    },
+    {
+      "id": "0154",
+      "kind": "CONTAINER",
+      "truth": "DYPU6834260",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 11.271
+    },
+    {
+      "id": "0155",
+      "kind": "PLATE",
+      "truth": "P366347",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 9.9066
+    },
+    {
+      "id": "0156",
+      "kind": "CONTAINER",
+      "truth": "HZCJ7577271",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 7.2426
+    },
+    {
+      "id": "0157",
+      "kind": "PLATE",
+      "truth": "ABC0880",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.7079
+    },
+    {
+      "id": "0158",
+      "kind": "CONTAINER",
+      "truth": "JDTJ4336103",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 9.9952
+    },
+    {
+      "id": "0159",
+      "kind": "PLATE",
+      "truth": "P228945",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 7.0522
+    },
+    {
+      "id": "0160",
+      "kind": "CONTAINER",
+      "truth": "FCXZ6722496",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.6029
+    },
+    {
+      "id": "0161",
+      "kind": "PLATE",
+      "truth": "ABC1202",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 9.9067
+    },
+    {
+      "id": "0162",
+      "kind": "CONTAINER",
+      "truth": "XUIZ3289640",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 7.4099
+    },
+    {
+      "id": "0163",
+      "kind": "PLATE",
+      "truth": "ABC9442",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.534
+    },
+    {
+      "id": "0164",
+      "kind": "CONTAINER",
+      "truth": "LPAU6639702",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 9.7294
+    },
+    {
+      "id": "0165",
+      "kind": "PLATE",
+      "truth": "AB94898",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 7.0281
+    },
+    {
+      "id": "0166",
+      "kind": "CONTAINER",
+      "truth": "UZEU3886876",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.2273
+    },
+    {
+      "id": "0167",
+      "kind": "PLATE",
+      "truth": "P482524",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 9.6165
+    },
+    {
+      "id": "0168",
+      "kind": "CONTAINER",
+      "truth": "XPJJ7695091",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.9239
+    },
+    {
+      "id": "0169",
+      "kind": "PLATE",
+      "truth": "AB98160",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.3349
+    },
+    {
+      "id": "0170",
+      "kind": "CONTAINER",
+      "truth": "EDQU3968123",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 9.7937
+    },
+    {
+      "id": "0171",
+      "kind": "PLATE",
+      "truth": "ABC0901",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.7169
+    },
+    {
+      "id": "0172",
+      "kind": "CONTAINER",
+      "truth": "RHEJ4289293",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.6631
+    },
+    {
+      "id": "0173",
+      "kind": "PLATE",
+      "truth": "AB88583",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.1421
+    },
+    {
+      "id": "0174",
+      "kind": "CONTAINER",
+      "truth": "SSEU2745938",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 7.0689
+    },
+    {
+      "id": "0175",
+      "kind": "PLATE",
+      "truth": "AB52620",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.8517
+    },
+    {
+      "id": "0176",
+      "kind": "CONTAINER",
+      "truth": "GGFZ9090201",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.5832
+    },
+    {
+      "id": "0177",
+      "kind": "PLATE",
+      "truth": "AB23524",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.6576
+    },
+    {
+      "id": "0178",
+      "kind": "CONTAINER",
+      "truth": "BHCU8749534",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.7145
+    },
+    {
+      "id": "0179",
+      "kind": "PLATE",
+      "truth": "P537032",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.8757
+    },
+    {
+      "id": "0180",
+      "kind": "CONTAINER",
+      "truth": "TSXZ5634374",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 9.704
+    },
+    {
+      "id": "0181",
+      "kind": "PLATE",
+      "truth": "P690600",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 7.093
+    },
+    {
+      "id": "0182",
+      "kind": "CONTAINER",
+      "truth": "OEXU6277194",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.7507
+    },
+    {
+      "id": "0183",
+      "kind": "PLATE",
+      "truth": "AB85176",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.556
+    },
+    {
+      "id": "0184",
+      "kind": "CONTAINER",
+      "truth": "KWPU5792012",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.7899
+    },
+    {
+      "id": "0185",
+      "kind": "PLATE",
+      "truth": "AB95047",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.9045
+    },
+    {
+      "id": "0186",
+      "kind": "CONTAINER",
+      "truth": "YWSZ1755154",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 9.1388
+    },
+    {
+      "id": "0187",
+      "kind": "PLATE",
+      "truth": "ABC4619",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 11.9757
+    },
+    {
+      "id": "0188",
+      "kind": "CONTAINER",
+      "truth": "REJZ2914409",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.8497
+    },
+    {
+      "id": "0189",
+      "kind": "PLATE",
+      "truth": "P959990",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.6617
+    },
+    {
+      "id": "0190",
+      "kind": "CONTAINER",
+      "truth": "FBMU5131946",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.0679
+    },
+    {
+      "id": "0191",
+      "kind": "PLATE",
+      "truth": "ABC7648",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.0766
+    },
+    {
+      "id": "0192",
+      "kind": "CONTAINER",
+      "truth": "XNYU7770879",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.7208
+    },
+    {
+      "id": "0193",
+      "kind": "PLATE",
+      "truth": "ABC3720",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.6999
+    },
+    {
+      "id": "0194",
+      "kind": "CONTAINER",
+      "truth": "ILLU9588631",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.9161
+    },
+    {
+      "id": "0195",
+      "kind": "PLATE",
+      "truth": "P350104",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.748
+    },
+    {
+      "id": "0196",
+      "kind": "CONTAINER",
+      "truth": "NCTU0006295",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.6629
+    },
+    {
+      "id": "0197",
+      "kind": "PLATE",
+      "truth": "ABC5611",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.9316
+    },
+    {
+      "id": "0198",
+      "kind": "CONTAINER",
+      "truth": "IVKJ2135304",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.8956
+    },
+    {
+      "id": "0199",
+      "kind": "PLATE",
+      "truth": "ABC9314",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.3665
+    },
+    {
+      "id": "0200",
+      "kind": "CONTAINER",
+      "truth": "QDSU1597737",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.6116
+    },
+    {
+      "id": "0201",
+      "kind": "PLATE",
+      "truth": "AB59113",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.0468
+    },
+    {
+      "id": "0202",
+      "kind": "CONTAINER",
+      "truth": "BXGZ6804778",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.8778
+    },
+    {
+      "id": "0203",
+      "kind": "PLATE",
+      "truth": "P564460",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.6146
+    },
+    {
+      "id": "0204",
+      "kind": "CONTAINER",
+      "truth": "KWEU8551329",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.7004
+    },
+    {
+      "id": "0205",
+      "kind": "PLATE",
+      "truth": "P416909",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.8086
+    },
+    {
+      "id": "0206",
+      "kind": "CONTAINER",
+      "truth": "YTPU1236305",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.5712
+    },
+    {
+      "id": "0207",
+      "kind": "PLATE",
+      "truth": "P663671",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.8897
+    },
+    {
+      "id": "0208",
+      "kind": "CONTAINER",
+      "truth": "KOPZ9624858",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 11.4181
+    },
+    {
+      "id": "0209",
+      "kind": "PLATE",
+      "truth": "ABC0540",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 7.0946
+    },
+    {
+      "id": "0210",
+      "kind": "CONTAINER",
+      "truth": "SUAJ7533272",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.898
+    },
+    {
+      "id": "0211",
+      "kind": "PLATE",
+      "truth": "AB52845",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.7645
+    },
+    {
+      "id": "0212",
+      "kind": "CONTAINER",
+      "truth": "GNCJ2752227",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 11.3125
+    },
+    {
+      "id": "0213",
+      "kind": "PLATE",
+      "truth": "P830534",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 9.3723
+    },
+    {
+      "id": "0214",
+      "kind": "CONTAINER",
+      "truth": "MTFU9439539",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.6105
+    },
+    {
+      "id": "0215",
+      "kind": "PLATE",
+      "truth": "P995784",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.3922
+    },
+    {
+      "id": "0216",
+      "kind": "CONTAINER",
+      "truth": "XVXU4933255",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 9.9958
+    },
+    {
+      "id": "0217",
+      "kind": "PLATE",
+      "truth": "P018794",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.9757
+    },
+    {
+      "id": "0218",
+      "kind": "CONTAINER",
+      "truth": "HMYU1295840",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.3401
+    },
+    {
+      "id": "0219",
+      "kind": "PLATE",
+      "truth": "P464458",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.9106
+    },
+    {
+      "id": "0220",
+      "kind": "CONTAINER",
+      "truth": "ALLZ8098846",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.6888
+    },
+    {
+      "id": "0221",
+      "kind": "PLATE",
+      "truth": "P424191",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.6352
+    },
+    {
+      "id": "0222",
+      "kind": "CONTAINER",
+      "truth": "WPWZ0284030",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.7482
+    },
+    {
+      "id": "0223",
+      "kind": "PLATE",
+      "truth": "ABC6791",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.7081
+    },
+    {
+      "id": "0224",
+      "kind": "CONTAINER",
+      "truth": "VYSZ1342969",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.8286
+    },
+    {
+      "id": "0225",
+      "kind": "PLATE",
+      "truth": "P311157",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 10.4744
+    },
+    {
+      "id": "0226",
+      "kind": "CONTAINER",
+      "truth": "QOQZ1548263",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.8565
+    },
+    {
+      "id": "0227",
+      "kind": "PLATE",
+      "truth": "ABC7357",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.6648
+    },
+    {
+      "id": "0228",
+      "kind": "CONTAINER",
+      "truth": "ZPGJ1130442",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.9323
+    },
+    {
+      "id": "0229",
+      "kind": "PLATE",
+      "truth": "AB16192",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.72
+    },
+    {
+      "id": "0230",
+      "kind": "CONTAINER",
+      "truth": "VSVJ7436644",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 8.5775
+    },
+    {
+      "id": "0231",
+      "kind": "PLATE",
+      "truth": "ABC4217",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.8062
+    },
+    {
+      "id": "0232",
+      "kind": "CONTAINER",
+      "truth": "JADU5175531",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.9903
+    },
+    {
+      "id": "0233",
+      "kind": "PLATE",
+      "truth": "P859441",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 8.8657
+    },
+    {
+      "id": "0234",
+      "kind": "CONTAINER",
+      "truth": "VQCJ9666414",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.8
+    },
+    {
+      "id": "0235",
+      "kind": "PLATE",
+      "truth": "P539379",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 6.1336
+    },
+    {
+      "id": "0236",
+      "kind": "CONTAINER",
+      "truth": "BZVJ9072361",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 8.4404
+    },
+    {
+      "id": "0237",
+      "kind": "PLATE",
+      "truth": "AB42668",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.7588
+    },
+    {
+      "id": "0238",
+      "kind": "CONTAINER",
+      "truth": "QJHU8410640",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.9564
+    },
+    {
+      "id": "0239",
+      "kind": "PLATE",
+      "truth": "ABC8889",
+      "raw": "452x74",
+      "predicted": "4 variantes",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 5.6757
+    }
+  ]
+}

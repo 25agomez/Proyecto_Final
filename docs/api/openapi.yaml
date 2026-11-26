@@ -1,0 +1,655 @@
+openapi: 3.1.0
+info:
+  title: LogisticaPortuaria CR API
+  version: 1.0.0
+  description: |
+    Contrato REST del backend (puertas, citas, bitacora digital, patio, optimizador,
+    congestion y flota). Base: `/api/v1`.
+    Errores en formato `ProblemDetail` (RFC 7807).
+  license:
+    name: Apache-2.0
+servers:
+  - url: http://localhost:8080/api/v1
+    description: Backend local (docker compose)
+tags:
+  - name: gate
+    description: Lecturas OCR, conciliacion y bitacora
+  - name: yard
+    description: Patio, bloques y slots
+  - name: optimizer
+    description: Stacking inteligente (OR-Tools)
+  - name: congestion
+    description: Pronostico de congestion
+  - name: fleet
+    description: Trazabilidad de flota interna
+paths:
+  /gate-events:
+    post:
+      tags: [gate]
+      summary: Ingesta de un evento de lectura (idempotente por eventId)
+      description: |
+        Endpoint de ingesta del servicio edge-ocr. Reintentos con el mismo `eventId`
+        no duplican informacion (respuesta 200 en vez de 201).
+      operationId: ingestGateEvent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GateEvent'
+      responses:
+        '201':
+          description: Evento creado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GateEventResponse'
+        '200':
+          description: Evento ya existente (idempotente)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GateEventResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '422':
+          $ref: '#/components/responses/Unprocessable'
+    get:
+      tags: [gate]
+      summary: Lista de lecturas (filtros por gate, tipo, fecha y texto normalizado)
+      operationId: listGateEvents
+      parameters:
+        - name: gateId
+          in: query
+          schema: { type: string, format: uuid }
+        - name: kind
+          in: query
+          schema: { type: string, enum: [PLATE, CONTAINER] }
+        - name: from
+          in: query
+          schema: { type: string, format: date-time }
+        - name: to
+          in: query
+          schema: { type: string, format: date-time }
+        - name: text
+          in: query
+          schema: { type: string }
+        - name: page
+          in: query
+          schema: { type: integer, minimum: 0, default: 0 }
+        - name: size
+          in: query
+          schema: { type: integer, minimum: 1, maximum: 200, default: 50 }
+      responses:
+        '200':
+          description: Pagina de lecturas
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PageGateEvent'
+  /visits:
+    get:
+      tags: [gate]
+      summary: Lista de visitas de la bitacora digital
+      operationId: listVisits
+      parameters:
+        - name: state
+          in: query
+          schema: { $ref: '#/components/schemas/VisitState' }
+        - name: result
+          in: query
+          schema: { $ref: '#/components/schemas/VisitResult' }
+        - name: plate
+          in: query
+          schema: { type: string }
+        - name: from
+          in: query
+          schema: { type: string, format: date-time }
+        - name: to
+          in: query
+          schema: { type: string, format: date-time }
+        - name: page
+          in: query
+          schema: { type: integer, minimum: 0, default: 0 }
+        - name: size
+          in: query
+          schema: { type: integer, minimum: 1, maximum: 200, default: 50 }
+      responses:
+        '200':
+          description: Pagina de visitas
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PageVisit'
+  /visits/{id}:
+    get:
+      tags: [gate]
+      summary: Detalle de una visita con su linea de tiempo
+      operationId: getVisit
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string, format: uuid }
+      responses:
+        '200':
+          description: Visita
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Visit'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /visits/{id}/transitions:
+    post:
+      tags: [gate]
+      summary: Avanza el estado de la visita (maquina de estados)
+      operationId: transitionVisit
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string, format: uuid }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [targetState]
+              properties:
+                targetState: { $ref: '#/components/schemas/VisitState' }
+                slotId: { type: string, format: uuid }
+                note: { type: string }
+      responses:
+        '200':
+          description: Visita actualizada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Visit'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /review-tasks:
+    get:
+      tags: [gate]
+      summary: Cola de revision manual
+      operationId: listReviewTasks
+      parameters:
+        - name: status
+          in: query
+          schema: { type: string, enum: [PENDIENTE, APROBADO, CORREGIDO, RECHAZADO] }
+      responses:
+        '200':
+          description: Tareas de revision
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/ReviewTask' }
+  /review-tasks/{id}/resolve:
+    post:
+      tags: [gate]
+      summary: Aprueba, corrige o rechaza una lectura dudosa
+      operationId: resolveReviewTask
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string, format: uuid }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [resolution]
+              properties:
+                resolution: { type: string, enum: [APROBADO, CORREGIDO, RECHAZADO] }
+                correctedText: { type: string }
+                reason: { type: string }
+      responses:
+        '200':
+          description: Tarea resuelta
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReviewTask'
+        '409':
+          $ref: '#/components/responses/Conflict'
+  /containers:
+    get:
+      tags: [yard]
+      summary: Lista de contenedores
+      operationId: listContainers
+      parameters:
+        - name: status
+          in: query
+          schema: { type: string, enum: [IN_TRANSIT, IN_YARD, RESERVED, GATE_HOLD, OUT, UNKNOWN] }
+        - name: clientCode
+          in: query
+          schema: { type: string }
+        - name: from
+          in: query
+          schema: { type: string, format: date-time }
+        - name: to
+          in: query
+          schema: { type: string, format: date-time }
+        - name: page
+          in: query
+          schema: { type: integer, minimum: 0, default: 0 }
+        - name: size
+          in: query
+          schema: { type: integer, minimum: 1, maximum: 200, default: 50 }
+      responses:
+        '200':
+          description: Pagina de contenedores
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PageContainer'
+  /containers/{code}:
+    get:
+      tags: [yard]
+      summary: Contenedor por codigo BIC
+      operationId: getContainer
+      parameters:
+        - name: code
+          in: path
+          required: true
+          schema: { type: string, pattern: '^[A-Z]{3}[UJZ][0-9]{7}$' }
+      responses:
+        '200':
+          description: Contenedor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Container'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /yard/slots:
+    get:
+      tags: [yard]
+      summary: Slots del patio con su ocupacion actual
+      operationId: listSlots
+      parameters:
+        - name: yardId
+          in: query
+          schema: { type: string, format: uuid }
+        - name: blockCode
+          in: query
+          schema: { type: string }
+        - name: onlyFree
+          in: query
+          schema: { type: boolean, default: false }
+      responses:
+        '200':
+          description: Slots
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/Slot' }
+  /optimizer/recommendations:
+    post:
+      tags: [optimizer]
+      summary: Top-3 slots recomendados para un contenedor entrante
+      operationId: optimizerRecommendations
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OptimizerRequest'
+      responses:
+        '200':
+          description: Recomendaciones con explicacion en espanol
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OptimizerResponse'
+        '422':
+          $ref: '#/components/responses/Unprocessable'
+  /optimizer/plans:
+    post:
+      tags: [optimizer]
+      summary: Plan de movimiento por lotes (asincrono)
+      operationId: optimizerPlans
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                containerCodes:
+                  type: array
+                  items: { type: string }
+                strategy: { type: string, enum: [HEURISTIC, CP_SAT], default: HEURISTIC }
+                timeLimitSeconds: { type: integer, minimum: 1, maximum: 600, default: 30 }
+      responses:
+        '202':
+          description: Plan en proceso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OptimizerPlan'
+  /congestion/forecast:
+    get:
+      tags: [congestion]
+      summary: Pronostico de espera por puerta
+      operationId: congestionForecast
+      parameters:
+        - name: gateId
+          in: query
+          schema: { type: string, format: uuid }
+        - name: horizon
+          in: query
+          schema: { type: integer, enum: [15, 30, 60], default: 30 }
+      responses:
+        '200':
+          description: Pronostico
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Forecast'
+  /fleet/vehicles:
+    get:
+      tags: [fleet]
+      summary: Flota interna con su ultimo estado
+      operationId: listVehicles
+      parameters:
+        - name: yardId
+          in: query
+          schema: { type: string, format: uuid }
+        - name: status
+          in: query
+          schema: { type: string, enum: [LIBRE, EN_MOVIMIENTO, CARGANDO, DESCARGANDO, AVERIA] }
+      responses:
+        '200':
+          description: Vehiculos
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/Vehicle' }
+  /fleet/vehicles/{id}/track:
+    get:
+      tags: [fleet]
+      summary: Recorrido historico (GeoJSON LineString)
+      operationId: getVehicleTrack
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string, format: uuid }
+        - name: from
+          in: query
+          schema: { type: string, format: date-time }
+        - name: to
+          in: query
+          schema: { type: string, format: date-time }
+      responses:
+        '200':
+          description: Traza
+          content:
+            application/geo+json:
+              schema:
+                type: object
+                properties:
+                  type: { type: string, const: LineString }
+                  coordinates:
+                    type: array
+                    items: { type: array, items: { type: number } }
+components:
+  responses:
+    BadRequest:
+      description: Peticion invalida
+      content:
+        application/problem+json:
+          schema: { $ref: '#/components/schemas/ProblemDetail' }
+    Unprocessable:
+      description: Regla de negocio violada
+      content:
+        application/problem+json:
+          schema: { $ref: '#/components/schemas/ProblemDetail' }
+    NotFound:
+      description: Recurso no encontrado
+      content:
+        application/problem+json:
+          schema: { $ref: '#/components/schemas/ProblemDetail' }
+    Conflict:
+      description: Transicion de estado invalida
+      content:
+        application/problem+json:
+          schema: { $ref: '#/components/schemas/ProblemDetail' }
+  schemas:
+    ProblemDetail:
+      type: object
+      properties:
+        type: { type: string, format: uri }
+        title: { type: string }
+        status: { type: integer }
+        detail: { type: string }
+        instance: { type: string }
+        errors:
+          type: object
+          additionalProperties: { type: string }
+    GateEvent:
+      type: object
+      required: [eventId, gateId, timestamp, kind]
+      properties:
+        eventId: { type: string, format: uuid }
+        yardId: { type: string, format: uuid }
+        gateId: { type: string, format: uuid }
+        timestamp: { type: string, format: date-time }
+        kind: { type: string, enum: [PLATE, CONTAINER] }
+        rawText: { type: string }
+        normalizedText: { type: string }
+        confidence: { type: number, minimum: 0, maximum: 1 }
+        isoValid: { type: boolean }
+        corrected: { type: boolean, default: false }
+        bbox:
+          type: object
+          properties:
+            points:
+              type: array
+              items: { type: number }
+        evidenceImagePath: { type: string }
+        modelVersion: { type: string }
+        latencyMs: { type: integer, minimum: 0 }
+    GateEventResponse:
+      type: object
+      properties:
+        id: { type: string, format: uuid }
+        eventId: { type: string, format: uuid }
+        result: { $ref: '#/components/schemas/VisitResult' }
+        visitId: { type: string, format: uuid }
+        reason: { type: string }
+    VisitState:
+      type: string
+      enum: [ENTRADA_PUERTA, VALIDADO, ASIGNADO, EN_PROCESO, SALIDA_PUERTA, CANCELADO]
+    VisitResult:
+      type: string
+      enum: [PENDIENTE, AUTO_APROBADO, REQUIERE_REVISION, RECHAZADO]
+    Visit:
+      type: object
+      properties:
+        id: { type: string, format: uuid }
+        yardId: { type: string, format: uuid }
+        gateId: { type: string, format: uuid }
+        appointmentId: { type: string, format: uuid }
+        plate: { type: string }
+        containerCode: { type: string }
+        direction: { type: string, enum: [IN, OUT] }
+        state: { $ref: '#/components/schemas/VisitState' }
+        result: { $ref: '#/components/schemas/VisitResult' }
+        reason: { type: string }
+        enteredAt: { type: string, format: date-time }
+        validatedAt: { type: string, format: date-time }
+        assignedAt: { type: string, format: date-time }
+        processingAt: { type: string, format: date-time }
+        exitedAt: { type: string, format: date-time }
+        waitSeconds: { type: integer }
+        yardSeconds: { type: integer }
+        serviceSeconds: { type: integer }
+        timeline:
+          type: array
+          items:
+            type: object
+            properties:
+              stage: { $ref: '#/components/schemas/VisitState' }
+              at: { type: string, format: date-time }
+              actor: { type: string }
+    ReviewTask:
+      type: object
+      properties:
+        id: { type: string, format: uuid }
+        gateEventId: { type: string, format: uuid }
+        visitId: { type: string, format: uuid }
+        kind: { type: string, enum: [PLATE, CONTAINER] }
+        rawText: { type: string }
+        normalizedText: { type: string }
+        reason: { type: string }
+        status: { type: string, enum: [PENDIENTE, APROBADO, CORREGIDO, RECHAZADO] }
+        resolvedText: { type: string }
+        resolvedBy: { type: string }
+        resolvedAt: { type: string, format: date-time }
+    Container:
+      type: object
+      properties:
+        id: { type: string, format: uuid }
+        code: { type: string }
+        sizeFt: { type: integer, enum: [20, 40] }
+        containerType: { type: string, enum: [dry, reefer, hazmat] }
+        status: { type: string }
+        weightKg: { type: number }
+        clientCode: { type: string }
+        eta: { type: string, format: date-time }
+        etd: { type: string, format: date-time }
+        slot:
+          $ref: '#/components/schemas/Slot'
+    Slot:
+      type: object
+      properties:
+        id: { type: string, format: uuid }
+        blockCode: { type: string }
+        bay: { type: integer }
+        row: { type: integer }
+        tier: { type: integer }
+        sizeFt: { type: integer, enum: [20, 40] }
+        slotType: { type: string, enum: [dry, reefer, hazmat] }
+        hasPower: { type: boolean }
+        distanceToGateMeters: { type: number }
+        occupied: { type: boolean }
+        containerCode: { type: string }
+    OptimizerRequest:
+      type: object
+      required: [sizeFt, containerType]
+      properties:
+        containerCode: { type: string }
+        sizeFt: { type: integer, enum: [20, 40] }
+        containerType: { type: string, enum: [dry, reefer, hazmat] }
+        weightKg: { type: number }
+        etd: { type: string, format: date-time }
+        etdUncertaintyHours: { type: number }
+        clientCode: { type: string }
+        requiresPower: { type: boolean }
+    OptimizerResponse:
+      type: object
+      properties:
+        strategy: { type: string }
+        computationMs: { type: integer }
+        recommendations:
+          type: array
+          items:
+            type: object
+            properties:
+              rank: { type: integer }
+              slot: { $ref: '#/components/schemas/Slot' }
+              score: { type: number }
+              explanation: { type: string }
+    OptimizerPlan:
+      type: object
+      properties:
+        planId: { type: string, format: uuid }
+        status: { type: string, enum: [PENDING, RUNNING, DONE, FAILED] }
+        moves:
+          type: array
+          items:
+            type: object
+            properties:
+              order: { type: integer }
+              action: { type: string, enum: [MOVE, REMOVE, PLACE] }
+              containerCode: { type: string }
+              fromSlotId: { type: string, format: uuid }
+              toSlotId: { type: string, format: uuid }
+              restows: { type: integer }
+        metrics:
+          type: object
+          properties:
+            expectedRestows: { type: number }
+            averageDistanceMeters: { type: number }
+            occupancy: { type: number }
+    Forecast:
+      type: object
+      properties:
+        gateId: { type: string, format: uuid }
+        horizonMin: { type: integer, enum: [15, 30, 60] }
+        expectedWaitMin: { type: number }
+        p10: { type: number }
+        p90: { type: number }
+        queueLength: { type: integer }
+        riskLevel: { type: string, enum: [BAJO, MEDIO, ALTO] }
+        confidence: { type: string, enum: [BAJA, MEDIA, ALTA] }
+        model: { type: string }
+        drivers:
+          type: array
+          items: { type: string }
+    Vehicle:
+      type: object
+      properties:
+        id: { type: string, format: uuid }
+        code: { type: string }
+        vehicleType: { type: string, enum: [MONTACARGAS, RASTRA, REACH_STACKER, TIRADOR] }
+        status: { type: string, enum: [LIBRE, EN_MOVIMIENTO, CARGANDO, DESCARGANDO, AVERIA] }
+        lastState:
+          type: object
+          properties:
+            at: { type: string, format: date-time }
+            x: { type: number }
+            y: { type: number }
+            speedKmh: { type: number }
+            batteryPct: { type: number }
+    PageGateEvent:
+      type: object
+      properties:
+        content:
+          type: array
+          items: { $ref: '#/components/schemas/GateEventResponse' }
+        page: { type: integer }
+        size: { type: integer }
+        totalElements: { type: integer }
+        totalPages: { type: integer }
+    PageVisit:
+      type: object
+      properties:
+        content:
+          type: array
+          items: { $ref: '#/components/schemas/Visit' }
+        page: { type: integer }
+        size: { type: integer }
+        totalElements: { type: integer }
+        totalPages: { type: integer }
+    PageContainer:
+      type: object
+      properties:
+        content:
+          type: array
+          items: { $ref: '#/components/schemas/Container' }
+        page: { type: integer }
+        size: { type: integer }
+        totalElements: { type: integer }
+        totalPages: { type: integer }

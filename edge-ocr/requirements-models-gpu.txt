@@ -1,0 +1,12 @@
+# Runtimes pesados de inferencia (variante GPU del Dockerfile).
+#
+# `paddlepaddle-gpu` incluye su propio runtime CUDA: la imagen no necesita
+# una base CUDA, pero el host si necesita el driver NVIDIA y
+# `nvidia-container-toolkit`.
+#
+# Licencias: PaddlePaddle (Apache-2.0), PaddleOCR (Apache-2.0),
+# Ultralytics (AGPL-3.0). La licencia AGPL de Ultralytics obliga a revisar el
+# uso en un producto cerrado: ver "Licencias" en edge-ocr/README.md.
+paddlepaddle-gpu==2.6.2
+paddleocr==2.9.1
+ultralytics==8.3.40

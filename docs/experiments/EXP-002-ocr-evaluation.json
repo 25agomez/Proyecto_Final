@@ -1,0 +1,2421 @@
+{
+  "mode": "corrupt",
+  "samples": 240,
+  "containers": 120,
+  "plates": 120,
+  "notMeasured": null,
+  "rawExactMatchPct": 60.0,
+  "exactMatchPct": 74.58,
+  "cerRaw": 0.047222,
+  "cerFinal": 0.034722,
+  "checkDigitValidPct": 95.83,
+  "correctedPct": 16.67,
+  "invalidPct": 4.17,
+  "latencyP50Ms": 0.003,
+  "latencyP95Ms": 0.018,
+  "latencyMeanMs": 0.005,
+  "dataset": "data/synthetic",
+  "seed": 20260222,
+  "samplesDetail": [
+    {
+      "id": "0000",
+      "kind": "CONTAINER",
+      "truth": "FUZZ1761001",
+      "raw": "FUZZ1761001",
+      "predicted": "FUZZ1761001",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.026
+    },
+    {
+      "id": "0001",
+      "kind": "PLATE",
+      "truth": "P340114",
+      "raw": "P940114",
+      "predicted": "P940114",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0037
+    },
+    {
+      "id": "0002",
+      "kind": "CONTAINER",
+      "truth": "VQCZ6408778",
+      "raw": "V0CZ6408778",
+      "predicted": "VQCZ6408778",
+      "isoValid": true,
+      "corrected": true,
+      "latencyMs": 0.0259
+    },
+    {
+      "id": "0003",
+      "kind": "PLATE",
+      "truth": "P265814",
+      "raw": "P265814",
+      "predicted": "P265814",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0021
+    },
+    {
+      "id": "0004",
+      "kind": "CONTAINER",
+      "truth": "BMWJ4289671",
+      "raw": "BMWJ4289671",
+      "predicted": "BMWJ4289671",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0078
+    },
+    {
+      "id": "0005",
+      "kind": "PLATE",
+      "truth": "AB58860",
+      "raw": "AB58868",
+      "predicted": "AB58868",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0017
+    },
+    {
+      "id": "0006",
+      "kind": "CONTAINER",
+      "truth": "SELU7969676",
+      "raw": "SE1U7969676",
+      "predicted": "SELU7969676",
+      "isoValid": true,
+      "corrected": true,
+      "latencyMs": 0.0181
+    },
+    {
+      "id": "0007",
+      "kind": "PLATE",
+      "truth": "P569407",
+      "raw": "P5694.07",
+      "predicted": "P569407",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0022
+    },
+    {
+      "id": "0008",
+      "kind": "CONTAINER",
+      "truth": "NVEZ2316903",
+      "raw": "NVEZ231690 3",
+      "predicted": "NVEZ2316903",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.007
+    },
+    {
+      "id": "0009",
+      "kind": "PLATE",
+      "truth": "ABC9191",
+      "raw": "ABC9191",
+      "predicted": "ABC9191",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0013
+    },
+    {
+      "id": "0010",
+      "kind": "CONTAINER",
+      "truth": "AQZJ8219025",
+      "raw": "AQZJ8219025",
+      "predicted": "AQZJ8219025",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0062
+    },
+    {
+      "id": "0011",
+      "kind": "PLATE",
+      "truth": "AB01560",
+      "raw": "AB01560",
+      "predicted": "AB01560",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0013
+    },
+    {
+      "id": "0012",
+      "kind": "CONTAINER",
+      "truth": "KZJZ2796912",
+      "raw": "KZJZ2796912",
+      "predicted": "KZJZ2796912",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0054
+    },
+    {
+      "id": "0013",
+      "kind": "PLATE",
+      "truth": "P984940",
+      "raw": "P984940",
+      "predicted": "P984940",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.001
+    },
+    {
+      "id": "0014",
+      "kind": "CONTAINER",
+      "truth": "LLVJ6707857",
+      "raw": "LLVJ6707857",
+      "predicted": "LLVJ6707857",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0049
+    },
+    {
+      "id": "0015",
+      "kind": "PLATE",
+      "truth": "ABC7227",
+      "raw": "ABC7227",
+      "predicted": "ABC7227",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.001
+    },
+    {
+      "id": "0016",
+      "kind": "CONTAINER",
+      "truth": "NLPZ5229344",
+      "raw": "NLPZ5229344",
+      "predicted": "NLPZ5229344",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0048
+    },
+    {
+      "id": "0017",
+      "kind": "PLATE",
+      "truth": "P022380",
+      "raw": "P022380",
+      "predicted": "P022380",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.001
+    },
+    {
+      "id": "0018",
+      "kind": "CONTAINER",
+      "truth": "CFLU2817337",
+      "raw": "CFLU2817337",
+      "predicted": "CFLU2817337",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0084
+    },
+    {
+      "id": "0019",
+      "kind": "PLATE",
+      "truth": "ABC5649",
+      "raw": "ABC5649",
+      "predicted": "ABC5649",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.001
+    },
+    {
+      "id": "0020",
+      "kind": "CONTAINER",
+      "truth": "UVXZ2445225",
+      "raw": "UVXZ2445Z25",
+      "predicted": "UVXZ2445225",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0059
+    },
+    {
+      "id": "0021",
+      "kind": "PLATE",
+      "truth": "AB92082",
+      "raw": "A892082",
+      "predicted": "A892082",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0012
+    },
+    {
+      "id": "0022",
+      "kind": "CONTAINER",
+      "truth": "JVCJ5685292",
+      "raw": "JVCJ5685292",
+      "predicted": "JVCJ5685292",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0057
+    },
+    {
+      "id": "0023",
+      "kind": "PLATE",
+      "truth": "ABC1192",
+      "raw": "ABC1197",
+      "predicted": "ABC1197",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0012
+    },
+    {
+      "id": "0024",
+      "kind": "CONTAINER",
+      "truth": "QAMU4308696",
+      "raw": "QAMU4308696",
+      "predicted": "QAMU4308696",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0054
+    },
+    {
+      "id": "0025",
+      "kind": "PLATE",
+      "truth": "P181265",
+      "raw": "P18126S",
+      "predicted": "P18126S",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0011
+    },
+    {
+      "id": "0026",
+      "kind": "CONTAINER",
+      "truth": "MGKU9234742",
+      "raw": "MGKU9234742",
+      "predicted": "MGKU9234742",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.005
+    },
+    {
+      "id": "0027",
+      "kind": "PLATE",
+      "truth": "AB05502",
+      "raw": "ABD5502",
+      "predicted": "ABD5502",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0011
+    },
+    {
+      "id": "0028",
+      "kind": "CONTAINER",
+      "truth": "SRKZ3083104",
+      "raw": "SRKZ3Q83104",
+      "predicted": "SRKZ3083104",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0058
+    },
+    {
+      "id": "0029",
+      "kind": "PLATE",
+      "truth": "AB35356",
+      "raw": "AB35355",
+      "predicted": "AB35355",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0011
+    },
+    {
+      "id": "0030",
+      "kind": "CONTAINER",
+      "truth": "BGAU3385648",
+      "raw": "BGAU3385648",
+      "predicted": "BGAU3385648",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0051
+    },
+    {
+      "id": "0031",
+      "kind": "PLATE",
+      "truth": "P142976",
+      "raw": "P142976",
+      "predicted": "P142976",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0011
+    },
+    {
+      "id": "0032",
+      "kind": "CONTAINER",
+      "truth": "PVDJ5706564",
+      "raw": "PVDJ5706564",
+      "predicted": "PVDJ5706564",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0047
+    },
+    {
+      "id": "0033",
+      "kind": "PLATE",
+      "truth": "ABC3628",
+      "raw": "A9C3628",
+      "predicted": "A9C3628",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0012
+    },
+    {
+      "id": "0034",
+      "kind": "CONTAINER",
+      "truth": "EBLJ9446718",
+      "raw": "EBLJ9446718",
+      "predicted": "EBLJ9446718",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0057
+    },
+    {
+      "id": "0035",
+      "kind": "PLATE",
+      "truth": "ABC0296",
+      "raw": "ABC0296",
+      "predicted": "ABC0296",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0011
+    },
+    {
+      "id": "0036",
+      "kind": "CONTAINER",
+      "truth": "QCKU6932155",
+      "raw": "QCKU6932155",
+      "predicted": "QCKU6932155",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0048
+    },
+    {
+      "id": "0037",
+      "kind": "PLATE",
+      "truth": "ABC9867",
+      "raw": "ABC9867",
+      "predicted": "ABC9867",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.001
+    },
+    {
+      "id": "0038",
+      "kind": "CONTAINER",
+      "truth": "KUOU3396604",
+      "raw": "KUOU3396604",
+      "predicted": "KUOU3396604",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0045
+    },
+    {
+      "id": "0039",
+      "kind": "PLATE",
+      "truth": "AB59873",
+      "raw": "AB59823",
+      "predicted": "AB59823",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0011
+    },
+    {
+      "id": "0040",
+      "kind": "CONTAINER",
+      "truth": "PFMJ3258504",
+      "raw": "PFMJ3258504",
+      "predicted": "PFMJ3258504",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0052
+    },
+    {
+      "id": "0041",
+      "kind": "PLATE",
+      "truth": "ABC0784",
+      "raw": "ABC0784",
+      "predicted": "ABC0784",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0011
+    },
+    {
+      "id": "0042",
+      "kind": "CONTAINER",
+      "truth": "JHXZ8704730",
+      "raw": "JHXZ8704730",
+      "predicted": "JHXZ8704730",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0051
+    },
+    {
+      "id": "0043",
+      "kind": "PLATE",
+      "truth": "P795067",
+      "raw": "P795067",
+      "predicted": "P795067",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0009
+    },
+    {
+      "id": "0044",
+      "kind": "CONTAINER",
+      "truth": "TROJ6352015",
+      "raw": "TROJ6357015",
+      "predicted": "TROJ6367015",
+      "isoValid": true,
+      "corrected": true,
+      "latencyMs": 0.0304
+    },
+    {
+      "id": "0045",
+      "kind": "PLATE",
+      "truth": "ABC5495",
+      "raw": "ABC54.95",
+      "predicted": "ABC5495",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0017
+    },
+    {
+      "id": "0046",
+      "kind": "CONTAINER",
+      "truth": "HFXU7342719",
+      "raw": "HFXU7342719",
+      "predicted": "HFXU7342719",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0114
+    },
+    {
+      "id": "0047",
+      "kind": "PLATE",
+      "truth": "P012331",
+      "raw": "P012331",
+      "predicted": "P012331",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0019
+    },
+    {
+      "id": "0048",
+      "kind": "CONTAINER",
+      "truth": "GTCJ7713081",
+      "raw": "GTCJ7713081",
+      "predicted": "GTCJ7713081",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.007
+    },
+    {
+      "id": "0049",
+      "kind": "PLATE",
+      "truth": "P766071",
+      "raw": "P766071",
+      "predicted": "P766071",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0011
+    },
+    {
+      "id": "0050",
+      "kind": "CONTAINER",
+      "truth": "CDNJ5381243",
+      "raw": "CDNJ5381243",
+      "predicted": "CDNJ5381243",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0053
+    },
+    {
+      "id": "0051",
+      "kind": "PLATE",
+      "truth": "ABC1289",
+      "raw": "ABC289",
+      "predicted": "ABC289",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0011
+    },
+    {
+      "id": "0052",
+      "kind": "CONTAINER",
+      "truth": "URPJ3008438",
+      "raw": "URPJ3006438",
+      "predicted": "URPJ8006438",
+      "isoValid": true,
+      "corrected": true,
+      "latencyMs": 0.024
+    },
+    {
+      "id": "0053",
+      "kind": "PLATE",
+      "truth": "P019629",
+      "raw": "P019629",
+      "predicted": "P019629",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0016
+    },
+    {
+      "id": "0054",
+      "kind": "CONTAINER",
+      "truth": "VIIZ3467242",
+      "raw": "VIIZ9467242",
+      "predicted": "VIIZ3467242",
+      "isoValid": true,
+      "corrected": true,
+      "latencyMs": 0.0247
+    },
+    {
+      "id": "0055",
+      "kind": "PLATE",
+      "truth": "ABC7415",
+      "raw": "ABC7415",
+      "predicted": "ABC7415",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0012
+    },
+    {
+      "id": "0056",
+      "kind": "CONTAINER",
+      "truth": "CSPZ5619236",
+      "raw": "CSPZ5619796",
+      "predicted": "GSPZ5619796",
+      "isoValid": true,
+      "corrected": true,
+      "latencyMs": 0.0114
+    },
+    {
+      "id": "0057",
+      "kind": "PLATE",
+      "truth": "P147157",
+      "raw": "147157",
+      "predicted": "147157",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.004
+    },
+    {
+      "id": "0058",
+      "kind": "CONTAINER",
+      "truth": "MXYZ8482400",
+      "raw": "MXYZ8482400",
+      "predicted": "MXYZ8482400",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.006
+    },
+    {
+      "id": "0059",
+      "kind": "PLATE",
+      "truth": "AB37467",
+      "raw": "A37467",
+      "predicted": "A37467",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0011
+    },
+    {
+      "id": "0060",
+      "kind": "CONTAINER",
+      "truth": "KRBU1103737",
+      "raw": "KRBU1103737",
+      "predicted": "KRBU1103737",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0053
+    },
+    {
+      "id": "0061",
+      "kind": "PLATE",
+      "truth": "AB32419",
+      "raw": "AB324I9",
+      "predicted": "AB324I9",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0011
+    },
+    {
+      "id": "0062",
+      "kind": "CONTAINER",
+      "truth": "TNDU8310479",
+      "raw": "TNDU8310479",
+      "predicted": "TNDU8310479",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0054
+    },
+    {
+      "id": "0063",
+      "kind": "PLATE",
+      "truth": "ABC9524",
+      "raw": "ABC9524",
+      "predicted": "ABC9524",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.001
+    },
+    {
+      "id": "0064",
+      "kind": "CONTAINER",
+      "truth": "BZUZ7368229",
+      "raw": "BZUZ7368229",
+      "predicted": "BZUZ7368229",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0049
+    },
+    {
+      "id": "0065",
+      "kind": "PLATE",
+      "truth": "AB39697",
+      "raw": "AB39097",
+      "predicted": "AB39097",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.001
+    },
+    {
+      "id": "0066",
+      "kind": "CONTAINER",
+      "truth": "AXUJ5788020",
+      "raw": "AXUJ5788020",
+      "predicted": "AXUJ5788020",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0052
+    },
+    {
+      "id": "0067",
+      "kind": "PLATE",
+      "truth": "AB09341",
+      "raw": "AB09391",
+      "predicted": "AB09391",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.001
+    },
+    {
+      "id": "0068",
+      "kind": "CONTAINER",
+      "truth": "OUVZ0650456",
+      "raw": "OUVZ0650456",
+      "predicted": "OUVZ0650456",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0055
+    },
+    {
+      "id": "0069",
+      "kind": "PLATE",
+      "truth": "ABC1768",
+      "raw": "ABCL7G8",
+      "predicted": "ABCL7G8",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.001
+    },
+    {
+      "id": "0070",
+      "kind": "CONTAINER",
+      "truth": "LSVU4253436",
+      "raw": "LSVU4253436",
+      "predicted": "LSVU4253436",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0053
+    },
+    {
+      "id": "0071",
+      "kind": "PLATE",
+      "truth": "ABC4379",
+      "raw": "ABC4379",
+      "predicted": "ABC4379",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0009
+    },
+    {
+      "id": "0072",
+      "kind": "CONTAINER",
+      "truth": "DHIJ1620346",
+      "raw": "DHIJ1620346",
+      "predicted": "DHIJ1620346",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0048
+    },
+    {
+      "id": "0073",
+      "kind": "PLATE",
+      "truth": "ABC6013",
+      "raw": "ABC6-013",
+      "predicted": "ABC6013",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0017
+    },
+    {
+      "id": "0074",
+      "kind": "CONTAINER",
+      "truth": "SLFZ8997320",
+      "raw": "SLFZ8897320",
+      "predicted": "SLFZ8897320",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0055
+    },
+    {
+      "id": "0075",
+      "kind": "PLATE",
+      "truth": "P412653",
+      "raw": "P412653",
+      "predicted": "P412653",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0011
+    },
+    {
+      "id": "0076",
+      "kind": "CONTAINER",
+      "truth": "TEIZ6557720",
+      "raw": "TEIZ0557720",
+      "predicted": "TEIZ6557720",
+      "isoValid": true,
+      "corrected": true,
+      "latencyMs": 0.0187
+    },
+    {
+      "id": "0077",
+      "kind": "PLATE",
+      "truth": "P709338",
+      "raw": "P709338",
+      "predicted": "P709338",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0012
+    },
+    {
+      "id": "0078",
+      "kind": "CONTAINER",
+      "truth": "JEOJ7489795",
+      "raw": "JEOJ7489795",
+      "predicted": "JEOJ7489795",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0053
+    },
+    {
+      "id": "0079",
+      "kind": "PLATE",
+      "truth": "ABC2249",
+      "raw": "ABC2249",
+      "predicted": "ABC2249",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0011
+    },
+    {
+      "id": "0080",
+      "kind": "CONTAINER",
+      "truth": "AASJ0712199",
+      "raw": "AASJ0712199",
+      "predicted": "AASJ0712199",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0046
+    },
+    {
+      "id": "0081",
+      "kind": "PLATE",
+      "truth": "P756223",
+      "raw": "P756223",
+      "predicted": "P756223",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0009
+    },
+    {
+      "id": "0082",
+      "kind": "CONTAINER",
+      "truth": "JJGU5646522",
+      "raw": "JJGU5646522",
+      "predicted": "JJGU5646522",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0044
+    },
+    {
+      "id": "0083",
+      "kind": "PLATE",
+      "truth": "AB06275",
+      "raw": "AB05275",
+      "predicted": "AB05275",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.001
+    },
+    {
+      "id": "0084",
+      "kind": "CONTAINER",
+      "truth": "RFSJ9868832",
+      "raw": "RF.SJ9868832",
+      "predicted": "RFSJ9868832",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0056
+    },
+    {
+      "id": "0085",
+      "kind": "PLATE",
+      "truth": "ABC2261",
+      "raw": "ABC2261",
+      "predicted": "ABC2261",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.001
+    },
+    {
+      "id": "0086",
+      "kind": "CONTAINER",
+      "truth": "GKNZ2689667",
+      "raw": "GKNZ2689667",
+      "predicted": "GKNZ2689667",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0052
+    },
+    {
+      "id": "0087",
+      "kind": "PLATE",
+      "truth": "P544787",
+      "raw": "P544787",
+      "predicted": "P544787",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.001
+    },
+    {
+      "id": "0088",
+      "kind": "CONTAINER",
+      "truth": "EFUZ4017199",
+      "raw": "EFUZ4017199",
+      "predicted": "EFUZ4017199",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.005
+    },
+    {
+      "id": "0089",
+      "kind": "PLATE",
+      "truth": "P389325",
+      "raw": "P389325",
+      "predicted": "P389325",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.001
+    },
+    {
+      "id": "0090",
+      "kind": "CONTAINER",
+      "truth": "GSAZ0464684",
+      "raw": "GSAZ0464684",
+      "predicted": "GSAZ0464684",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0046
+    },
+    {
+      "id": "0091",
+      "kind": "PLATE",
+      "truth": "AB68995",
+      "raw": "AB68495",
+      "predicted": "AB68495",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.001
+    },
+    {
+      "id": "0092",
+      "kind": "CONTAINER",
+      "truth": "NYOJ6045574",
+      "raw": "NYOJ6045574",
+      "predicted": "NYOJ6045574",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.005
+    },
+    {
+      "id": "0093",
+      "kind": "PLATE",
+      "truth": "ABC4151",
+      "raw": "ABC415L",
+      "predicted": "ABC415L",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0011
+    },
+    {
+      "id": "0094",
+      "kind": "CONTAINER",
+      "truth": "HQIJ4131525",
+      "raw": "HQIJ4131525",
+      "predicted": "HQIJ4131525",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0049
+    },
+    {
+      "id": "0095",
+      "kind": "PLATE",
+      "truth": "AB91670",
+      "raw": "AB91670",
+      "predicted": "AB91670",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.001
+    },
+    {
+      "id": "0096",
+      "kind": "CONTAINER",
+      "truth": "GCQJ9095430",
+      "raw": "G.CQJ9095430",
+      "predicted": "GCQJ9095430",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0053
+    },
+    {
+      "id": "0097",
+      "kind": "PLATE",
+      "truth": "ABC8632",
+      "raw": "ABC8632",
+      "predicted": "ABC8632",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.003
+    },
+    {
+      "id": "0098",
+      "kind": "CONTAINER",
+      "truth": "OTWJ1151880",
+      "raw": "OTWJ115180",
+      "predicted": "OTWJ115180",
+      "isoValid": false,
+      "corrected": false,
+      "latencyMs": 0.0043
+    },
+    {
+      "id": "0099",
+      "kind": "PLATE",
+      "truth": "P407541",
+      "raw": "P407541",
+      "predicted": "P407541",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0015
+    },
+    {
+      "id": "0100",
+      "kind": "CONTAINER",
+      "truth": "HMWU0160415",
+      "raw": "HMWU0160415",
+      "predicted": "HMWU0160415",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0081
+    },
+    {
+      "id": "0101",
+      "kind": "PLATE",
+      "truth": "ABC3474",
+      "raw": "AC3474",
+      "predicted": "AC3474",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0013
+    },
+    {
+      "id": "0102",
+      "kind": "CONTAINER",
+      "truth": "WWYJ3009352",
+      "raw": "WWYJ3Q09352",
+      "predicted": "WWYJ3009352",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.007
+    },
+    {
+      "id": "0103",
+      "kind": "PLATE",
+      "truth": "ABC4112",
+      "raw": "ABC4112",
+      "predicted": "ABC4112",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0012
+    },
+    {
+      "id": "0104",
+      "kind": "CONTAINER",
+      "truth": "HCLU7632931",
+      "raw": "HCLU7632931",
+      "predicted": "HCLU7632931",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0055
+    },
+    {
+      "id": "0105",
+      "kind": "PLATE",
+      "truth": "AB18810",
+      "raw": "AB18910",
+      "predicted": "AB18910",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0011
+    },
+    {
+      "id": "0106",
+      "kind": "CONTAINER",
+      "truth": "BJLJ7271119",
+      "raw": "BJLJ7271119",
+      "predicted": "BJLJ7271119",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0053
+    },
+    {
+      "id": "0107",
+      "kind": "PLATE",
+      "truth": "AB74966",
+      "raw": "AB79966",
+      "predicted": "AB79966",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.001
+    },
+    {
+      "id": "0108",
+      "kind": "CONTAINER",
+      "truth": "RQTZ2436582",
+      "raw": "RQTZ2436582",
+      "predicted": "RQTZ2436582",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0052
+    },
+    {
+      "id": "0109",
+      "kind": "PLATE",
+      "truth": "AB70342",
+      "raw": "AB7034Z",
+      "predicted": "AB7034Z",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0011
+    },
+    {
+      "id": "0110",
+      "kind": "CONTAINER",
+      "truth": "IBLZ3757846",
+      "raw": "IBLZ3757846",
+      "predicted": "IBLZ3757846",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0052
+    },
+    {
+      "id": "0111",
+      "kind": "PLATE",
+      "truth": "AB80472",
+      "raw": "AB80972",
+      "predicted": "AB80972",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.001
+    },
+    {
+      "id": "0112",
+      "kind": "CONTAINER",
+      "truth": "UXRJ0081271",
+      "raw": "UXRJ0081771",
+      "predicted": "UXRJ8081771",
+      "isoValid": true,
+      "corrected": true,
+      "latencyMs": 0.0188
+    },
+    {
+      "id": "0113",
+      "kind": "PLATE",
+      "truth": "AB80127",
+      "raw": "AB80122",
+      "predicted": "AB80122",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0011
+    },
+    {
+      "id": "0114",
+      "kind": "CONTAINER",
+      "truth": "TACZ3651290",
+      "raw": "ACZ3651290",
+      "predicted": "ACZ3651290",
+      "isoValid": false,
+      "corrected": false,
+      "latencyMs": 0.0029
+    },
+    {
+      "id": "0115",
+      "kind": "PLATE",
+      "truth": "AB13826",
+      "raw": "A813826",
+      "predicted": "A813826",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0011
+    },
+    {
+      "id": "0116",
+      "kind": "CONTAINER",
+      "truth": "VZDJ5899030",
+      "raw": "V2DJ5899030",
+      "predicted": "VZDJ5899030",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0066
+    },
+    {
+      "id": "0117",
+      "kind": "PLATE",
+      "truth": "AB73475",
+      "raw": "A873475",
+      "predicted": "A873475",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0011
+    },
+    {
+      "id": "0118",
+      "kind": "CONTAINER",
+      "truth": "NLQU6618741",
+      "raw": "NLQU6618741",
+      "predicted": "NLQU6618741",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0055
+    },
+    {
+      "id": "0119",
+      "kind": "PLATE",
+      "truth": "ABC0817",
+      "raw": "ABC0817",
+      "predicted": "ABC0817",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0011
+    },
+    {
+      "id": "0120",
+      "kind": "CONTAINER",
+      "truth": "ZHHJ3146506",
+      "raw": "ZHHJ3146506",
+      "predicted": "ZHHJ3146506",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0051
+    },
+    {
+      "id": "0121",
+      "kind": "PLATE",
+      "truth": "AB24630",
+      "raw": "AB-24630",
+      "predicted": "AB24630",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0045
+    },
+    {
+      "id": "0122",
+      "kind": "CONTAINER",
+      "truth": "PCWZ1585083",
+      "raw": "PCWZ1585083",
+      "predicted": "PCWZ1585083",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0054
+    },
+    {
+      "id": "0123",
+      "kind": "PLATE",
+      "truth": "P329901",
+      "raw": "P329901",
+      "predicted": "P329901",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0011
+    },
+    {
+      "id": "0124",
+      "kind": "CONTAINER",
+      "truth": "EHDJ5462637",
+      "raw": "EHDJ5462637",
+      "predicted": "EHDJ5462637",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0047
+    },
+    {
+      "id": "0125",
+      "kind": "PLATE",
+      "truth": "ABC3462",
+      "raw": "ABC3462",
+      "predicted": "ABC3462",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.001
+    },
+    {
+      "id": "0126",
+      "kind": "CONTAINER",
+      "truth": "IZMJ5166056",
+      "raw": "IZMJ5166056",
+      "predicted": "IZMJ5166056",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0045
+    },
+    {
+      "id": "0127",
+      "kind": "PLATE",
+      "truth": "ABC1977",
+      "raw": "ABC1977",
+      "predicted": "ABC1977",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0009
+    },
+    {
+      "id": "0128",
+      "kind": "CONTAINER",
+      "truth": "GQCJ6918380",
+      "raw": "GQCJ6918380",
+      "predicted": "GQCJ6918380",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0044
+    },
+    {
+      "id": "0129",
+      "kind": "PLATE",
+      "truth": "P415714",
+      "raw": "P45714",
+      "predicted": "P45714",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0011
+    },
+    {
+      "id": "0130",
+      "kind": "CONTAINER",
+      "truth": "CCDJ9881630",
+      "raw": "CGDJ9887630",
+      "predicted": "GGDJ9887630",
+      "isoValid": true,
+      "corrected": true,
+      "latencyMs": 0.0114
+    },
+    {
+      "id": "0131",
+      "kind": "PLATE",
+      "truth": "ABC8066",
+      "raw": "ABC8066",
+      "predicted": "ABC8066",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0012
+    },
+    {
+      "id": "0132",
+      "kind": "CONTAINER",
+      "truth": "GHNU6598226",
+      "raw": "GHNU6598226",
+      "predicted": "GHNU6598226",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0049
+    },
+    {
+      "id": "0133",
+      "kind": "PLATE",
+      "truth": "P263589",
+      "raw": "P263589",
+      "predicted": "P263589",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0011
+    },
+    {
+      "id": "0134",
+      "kind": "CONTAINER",
+      "truth": "PBCU3765319",
+      "raw": "PBCU3765319",
+      "predicted": "PBCU3765319",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0049
+    },
+    {
+      "id": "0135",
+      "kind": "PLATE",
+      "truth": "ABC8439",
+      "raw": "ABC8439",
+      "predicted": "ABC8439",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.001
+    },
+    {
+      "id": "0136",
+      "kind": "CONTAINER",
+      "truth": "RHXJ3249142",
+      "raw": "RHXJ3249142",
+      "predicted": "RHXJ3249142",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0045
+    },
+    {
+      "id": "0137",
+      "kind": "PLATE",
+      "truth": "AB08117",
+      "raw": "AB08I17",
+      "predicted": "AB08I17",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.001
+    },
+    {
+      "id": "0138",
+      "kind": "CONTAINER",
+      "truth": "AHPU9293601",
+      "raw": "AHPU9293601",
+      "predicted": "AHPU9293601",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.005
+    },
+    {
+      "id": "0139",
+      "kind": "PLATE",
+      "truth": "ABC0083",
+      "raw": "ABC0083",
+      "predicted": "ABC0083",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.001
+    },
+    {
+      "id": "0140",
+      "kind": "CONTAINER",
+      "truth": "CNTU1679497",
+      "raw": "CNTU1679497",
+      "predicted": "CNTU1679497",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0047
+    },
+    {
+      "id": "0141",
+      "kind": "PLATE",
+      "truth": "P067081",
+      "raw": "P067081",
+      "predicted": "P067081",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.001
+    },
+    {
+      "id": "0142",
+      "kind": "CONTAINER",
+      "truth": "MHEZ1341012",
+      "raw": "MHEZ1341012",
+      "predicted": "MHEZ1341012",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0045
+    },
+    {
+      "id": "0143",
+      "kind": "PLATE",
+      "truth": "P399596",
+      "raw": "P399596",
+      "predicted": "P399596",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.001
+    },
+    {
+      "id": "0144",
+      "kind": "CONTAINER",
+      "truth": "UUMZ9930190",
+      "raw": "UUMZ9980190",
+      "predicted": "UUMZ9930190",
+      "isoValid": true,
+      "corrected": true,
+      "latencyMs": 0.0335
+    },
+    {
+      "id": "0145",
+      "kind": "PLATE",
+      "truth": "ABC3378",
+      "raw": "ABC3378",
+      "predicted": "ABC3378",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0012
+    },
+    {
+      "id": "0146",
+      "kind": "CONTAINER",
+      "truth": "KQLJ2204424",
+      "raw": "KQLJ2204424",
+      "predicted": "KQLJ2204424",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0051
+    },
+    {
+      "id": "0147",
+      "kind": "PLATE",
+      "truth": "ABC6813",
+      "raw": "ABC6813",
+      "predicted": "ABC6813",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.001
+    },
+    {
+      "id": "0148",
+      "kind": "CONTAINER",
+      "truth": "EVEU1669821",
+      "raw": "EVEU1669821",
+      "predicted": "EVEU1669821",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0045
+    },
+    {
+      "id": "0149",
+      "kind": "PLATE",
+      "truth": "AB55415",
+      "raw": "AB554-15",
+      "predicted": "AB55415",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0014
+    },
+    {
+      "id": "0150",
+      "kind": "CONTAINER",
+      "truth": "WIJJ4017182",
+      "raw": "WIJJ9017182",
+      "predicted": "WLJJ9017182",
+      "isoValid": true,
+      "corrected": true,
+      "latencyMs": 0.0117
+    },
+    {
+      "id": "0151",
+      "kind": "PLATE",
+      "truth": "AB99905",
+      "raw": "AB99405",
+      "predicted": "AB99405",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0011
+    },
+    {
+      "id": "0152",
+      "kind": "CONTAINER",
+      "truth": "WLYZ5221586",
+      "raw": "WLYZ5.221586",
+      "predicted": "WLYZ5221586",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0059
+    },
+    {
+      "id": "0153",
+      "kind": "PLATE",
+      "truth": "ABC1767",
+      "raw": "BC1767",
+      "predicted": "BC1767",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.001
+    },
+    {
+      "id": "0154",
+      "kind": "CONTAINER",
+      "truth": "DYPU6834260",
+      "raw": "DYPU6834260",
+      "predicted": "DYPU6834260",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0052
+    },
+    {
+      "id": "0155",
+      "kind": "PLATE",
+      "truth": "P366347",
+      "raw": "P366347",
+      "predicted": "P366347",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.001
+    },
+    {
+      "id": "0156",
+      "kind": "CONTAINER",
+      "truth": "HZCJ7577271",
+      "raw": "HZCJ7577271",
+      "predicted": "HZCJ7577271",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0045
+    },
+    {
+      "id": "0157",
+      "kind": "PLATE",
+      "truth": "ABC0880",
+      "raw": "ABC0880",
+      "predicted": "ABC0880",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0009
+    },
+    {
+      "id": "0158",
+      "kind": "CONTAINER",
+      "truth": "JDTJ4336103",
+      "raw": "JDTJ4336103",
+      "predicted": "JDTJ4336103",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0046
+    },
+    {
+      "id": "0159",
+      "kind": "PLATE",
+      "truth": "P228945",
+      "raw": "P228945",
+      "predicted": "P228945",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0009
+    },
+    {
+      "id": "0160",
+      "kind": "CONTAINER",
+      "truth": "FCXZ6722496",
+      "raw": "FCXZ6722496",
+      "predicted": "FCXZ6722496",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0045
+    },
+    {
+      "id": "0161",
+      "kind": "PLATE",
+      "truth": "ABC1202",
+      "raw": "A BC1202",
+      "predicted": "ABC1202",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0014
+    },
+    {
+      "id": "0162",
+      "kind": "CONTAINER",
+      "truth": "XUIZ3289640",
+      "raw": "XUIZ8289640",
+      "predicted": "XUIZ3289640",
+      "isoValid": true,
+      "corrected": true,
+      "latencyMs": 0.0175
+    },
+    {
+      "id": "0163",
+      "kind": "PLATE",
+      "truth": "ABC9442",
+      "raw": "ABC9442",
+      "predicted": "ABC9442",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0011
+    },
+    {
+      "id": "0164",
+      "kind": "CONTAINER",
+      "truth": "LPAU6639702",
+      "raw": "LPAU6639702",
+      "predicted": "LPAU6639702",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0049
+    },
+    {
+      "id": "0165",
+      "kind": "PLATE",
+      "truth": "AB94898",
+      "raw": "AB94898",
+      "predicted": "AB94898",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.001
+    },
+    {
+      "id": "0166",
+      "kind": "CONTAINER",
+      "truth": "UZEU3886876",
+      "raw": "UZFU3886876",
+      "predicted": "UZEU3886876",
+      "isoValid": true,
+      "corrected": true,
+      "latencyMs": 0.0135
+    },
+    {
+      "id": "0167",
+      "kind": "PLATE",
+      "truth": "P482524",
+      "raw": "P482524",
+      "predicted": "P482524",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0011
+    },
+    {
+      "id": "0168",
+      "kind": "CONTAINER",
+      "truth": "XPJJ7695091",
+      "raw": "XPJJ7696091",
+      "predicted": "XPJJ7695091",
+      "isoValid": true,
+      "corrected": true,
+      "latencyMs": 0.0308
+    },
+    {
+      "id": "0169",
+      "kind": "PLATE",
+      "truth": "AB98160",
+      "raw": "AB98760",
+      "predicted": "AB98760",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0011
+    },
+    {
+      "id": "0170",
+      "kind": "CONTAINER",
+      "truth": "EDQU3968123",
+      "raw": "EDQU3968123",
+      "predicted": "EDQU3968123",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0053
+    },
+    {
+      "id": "0171",
+      "kind": "PLATE",
+      "truth": "ABC0901",
+      "raw": "ABC0901",
+      "predicted": "ABC0901",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.001
+    },
+    {
+      "id": "0172",
+      "kind": "CONTAINER",
+      "truth": "RHEJ4289293",
+      "raw": "RHE4289293",
+      "predicted": "RHE4289293",
+      "isoValid": false,
+      "corrected": false,
+      "latencyMs": 0.0024
+    },
+    {
+      "id": "0173",
+      "kind": "PLATE",
+      "truth": "AB88583",
+      "raw": "AB88883",
+      "predicted": "AB88883",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.001
+    },
+    {
+      "id": "0174",
+      "kind": "CONTAINER",
+      "truth": "SSEU2745938",
+      "raw": "SSEU2745988",
+      "predicted": "SSEU7745988",
+      "isoValid": true,
+      "corrected": true,
+      "latencyMs": 0.0163
+    },
+    {
+      "id": "0175",
+      "kind": "PLATE",
+      "truth": "AB52620",
+      "raw": "A852620",
+      "predicted": "A852620",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0012
+    },
+    {
+      "id": "0176",
+      "kind": "CONTAINER",
+      "truth": "GGFZ9090201",
+      "raw": "GGFZ9090201",
+      "predicted": "GGFZ9090201",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0052
+    },
+    {
+      "id": "0177",
+      "kind": "PLATE",
+      "truth": "AB23524",
+      "raw": "A823524",
+      "predicted": "A823524",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.001
+    },
+    {
+      "id": "0178",
+      "kind": "CONTAINER",
+      "truth": "BHCU8749534",
+      "raw": "BHCU8749534",
+      "predicted": "BHCU8749534",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0048
+    },
+    {
+      "id": "0179",
+      "kind": "PLATE",
+      "truth": "P537032",
+      "raw": "P5370 32",
+      "predicted": "P537032",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0013
+    },
+    {
+      "id": "0180",
+      "kind": "CONTAINER",
+      "truth": "TSXZ5634374",
+      "raw": "TSXZ56343.74",
+      "predicted": "TSXZ5634374",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.005
+    },
+    {
+      "id": "0181",
+      "kind": "PLATE",
+      "truth": "P690600",
+      "raw": "P690600",
+      "predicted": "P690600",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0009
+    },
+    {
+      "id": "0182",
+      "kind": "CONTAINER",
+      "truth": "OEXU6277194",
+      "raw": "OEXV6277194",
+      "predicted": "OEXV6277194",
+      "isoValid": false,
+      "corrected": false,
+      "latencyMs": 0.0026
+    },
+    {
+      "id": "0183",
+      "kind": "PLATE",
+      "truth": "AB85176",
+      "raw": "AB85776",
+      "predicted": "AB85776",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0032
+    },
+    {
+      "id": "0184",
+      "kind": "CONTAINER",
+      "truth": "KWPU5792012",
+      "raw": "KWPU5792012",
+      "predicted": "KWPU5792012",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0093
+    },
+    {
+      "id": "0185",
+      "kind": "PLATE",
+      "truth": "AB95047",
+      "raw": "AB95D47",
+      "predicted": "AB95D47",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0066
+    },
+    {
+      "id": "0186",
+      "kind": "CONTAINER",
+      "truth": "YWSZ1755154",
+      "raw": "YWSZ1755184",
+      "predicted": "YWSZ1755154",
+      "isoValid": true,
+      "corrected": true,
+      "latencyMs": 0.039
+    },
+    {
+      "id": "0187",
+      "kind": "PLATE",
+      "truth": "ABC4619",
+      "raw": "ABC4619",
+      "predicted": "ABC4619",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0014
+    },
+    {
+      "id": "0188",
+      "kind": "CONTAINER",
+      "truth": "REJZ2914409",
+      "raw": "REJZ2914409",
+      "predicted": "REJZ2914409",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0061
+    },
+    {
+      "id": "0189",
+      "kind": "PLATE",
+      "truth": "P959990",
+      "raw": "P959990",
+      "predicted": "P959990",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0011
+    },
+    {
+      "id": "0190",
+      "kind": "CONTAINER",
+      "truth": "FBMU5131946",
+      "raw": "FBMU5131946",
+      "predicted": "FBMU5131946",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0051
+    },
+    {
+      "id": "0191",
+      "kind": "PLATE",
+      "truth": "ABC7648",
+      "raw": "ABC7648",
+      "predicted": "ABC7648",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.001
+    },
+    {
+      "id": "0192",
+      "kind": "CONTAINER",
+      "truth": "XNYU7770879",
+      "raw": "XNYU7770879-",
+      "predicted": "XNYU7770879",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.005
+    },
+    {
+      "id": "0193",
+      "kind": "PLATE",
+      "truth": "ABC3720",
+      "raw": "ABC3720",
+      "predicted": "ABC3720",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0011
+    },
+    {
+      "id": "0194",
+      "kind": "CONTAINER",
+      "truth": "ILLU9588631",
+      "raw": "ILLU-9588631",
+      "predicted": "ILLU9588631",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0061
+    },
+    {
+      "id": "0195",
+      "kind": "PLATE",
+      "truth": "P350104",
+      "raw": "350104",
+      "predicted": "350104",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0011
+    },
+    {
+      "id": "0196",
+      "kind": "CONTAINER",
+      "truth": "NCTU0006295",
+      "raw": "NCTU0006295",
+      "predicted": "NCTU0006295",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0056
+    },
+    {
+      "id": "0197",
+      "kind": "PLATE",
+      "truth": "ABC5611",
+      "raw": "ABC5611",
+      "predicted": "ABC5611",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.001
+    },
+    {
+      "id": "0198",
+      "kind": "CONTAINER",
+      "truth": "IVKJ2135304",
+      "raw": "IVKJ2135304",
+      "predicted": "IVKJ2135304",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0048
+    },
+    {
+      "id": "0199",
+      "kind": "PLATE",
+      "truth": "ABC9314",
+      "raw": "ABC9814",
+      "predicted": "ABC9814",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0013
+    },
+    {
+      "id": "0200",
+      "kind": "CONTAINER",
+      "truth": "QDSU1597737",
+      "raw": "QDSU1597737",
+      "predicted": "QDSU1597737",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0053
+    },
+    {
+      "id": "0201",
+      "kind": "PLATE",
+      "truth": "AB59113",
+      "raw": "AB59173",
+      "predicted": "AB59173",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0012
+    },
+    {
+      "id": "0202",
+      "kind": "CONTAINER",
+      "truth": "BXGZ6804778",
+      "raw": "BXGZ6804778",
+      "predicted": "BXGZ6804778",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0053
+    },
+    {
+      "id": "0203",
+      "kind": "PLATE",
+      "truth": "P564460",
+      "raw": "P564460",
+      "predicted": "P564460",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.001
+    },
+    {
+      "id": "0204",
+      "kind": "CONTAINER",
+      "truth": "KWEU8551329",
+      "raw": "KWEU8551329",
+      "predicted": "KWEU8551329",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0048
+    },
+    {
+      "id": "0205",
+      "kind": "PLATE",
+      "truth": "P416909",
+      "raw": "P416909",
+      "predicted": "P416909",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0009
+    },
+    {
+      "id": "0206",
+      "kind": "CONTAINER",
+      "truth": "YTPU1236305",
+      "raw": "YTPV1236365",
+      "predicted": "YTPV1236365",
+      "isoValid": false,
+      "corrected": false,
+      "latencyMs": 0.0027
+    },
+    {
+      "id": "0207",
+      "kind": "PLATE",
+      "truth": "P663671",
+      "raw": "P663671",
+      "predicted": "P663671",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.001
+    },
+    {
+      "id": "0208",
+      "kind": "CONTAINER",
+      "truth": "KOPZ9624858",
+      "raw": "KOPZ9624858",
+      "predicted": "KOPZ9624858",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0126
+    },
+    {
+      "id": "0209",
+      "kind": "PLATE",
+      "truth": "ABC0540",
+      "raw": "ABC0540",
+      "predicted": "ABC0540",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0017
+    },
+    {
+      "id": "0210",
+      "kind": "CONTAINER",
+      "truth": "SUAJ7533272",
+      "raw": "5UAJ7533272",
+      "predicted": "SUAJ7533272",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0074
+    },
+    {
+      "id": "0211",
+      "kind": "PLATE",
+      "truth": "AB52845",
+      "raw": "A852845",
+      "predicted": "A852845",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0014
+    },
+    {
+      "id": "0212",
+      "kind": "CONTAINER",
+      "truth": "GNCJ2752227",
+      "raw": "GNCJ2752227",
+      "predicted": "GNCJ2752227",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0062
+    },
+    {
+      "id": "0213",
+      "kind": "PLATE",
+      "truth": "P830534",
+      "raw": "P830S34",
+      "predicted": "P830S34",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0012
+    },
+    {
+      "id": "0214",
+      "kind": "CONTAINER",
+      "truth": "MTFU9439539",
+      "raw": "MTFU9439539",
+      "predicted": "MTFU9439539",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0061
+    },
+    {
+      "id": "0215",
+      "kind": "PLATE",
+      "truth": "P995784",
+      "raw": "P995784",
+      "predicted": "P995784",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0011
+    },
+    {
+      "id": "0216",
+      "kind": "CONTAINER",
+      "truth": "XVXU4933255",
+      "raw": "XUXU4933255",
+      "predicted": "XVXU4933255",
+      "isoValid": true,
+      "corrected": true,
+      "latencyMs": 0.0123
+    },
+    {
+      "id": "0217",
+      "kind": "PLATE",
+      "truth": "P018794",
+      "raw": "P018794",
+      "predicted": "P018794",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0011
+    },
+    {
+      "id": "0218",
+      "kind": "CONTAINER",
+      "truth": "HMYU1295840",
+      "raw": "HMYU1295840",
+      "predicted": "HMYU1295840",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.005
+    },
+    {
+      "id": "0219",
+      "kind": "PLATE",
+      "truth": "P464458",
+      "raw": "P404455",
+      "predicted": "P404455",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0011
+    },
+    {
+      "id": "0220",
+      "kind": "CONTAINER",
+      "truth": "ALLZ8098846",
+      "raw": "ALLZ8-098846",
+      "predicted": "ALLZ8098846",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0061
+    },
+    {
+      "id": "0221",
+      "kind": "PLATE",
+      "truth": "P424191",
+      "raw": "P424191",
+      "predicted": "P424191",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0011
+    },
+    {
+      "id": "0222",
+      "kind": "CONTAINER",
+      "truth": "WPWZ0284030",
+      "raw": "WPWZ0284080",
+      "predicted": "WPWZ0289080",
+      "isoValid": true,
+      "corrected": true,
+      "latencyMs": 0.0324
+    },
+    {
+      "id": "0223",
+      "kind": "PLATE",
+      "truth": "ABC6791",
+      "raw": "ABC6791",
+      "predicted": "ABC6791",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0012
+    },
+    {
+      "id": "0224",
+      "kind": "CONTAINER",
+      "truth": "VYSZ1342969",
+      "raw": "VYSZ13429G9",
+      "predicted": "VYSZ1342969",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0056
+    },
+    {
+      "id": "0225",
+      "kind": "PLATE",
+      "truth": "P311157",
+      "raw": "P3111S7",
+      "predicted": "P3111S7",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0011
+    },
+    {
+      "id": "0226",
+      "kind": "CONTAINER",
+      "truth": "QOQZ1548263",
+      "raw": "QOQZ154.8263",
+      "predicted": "QOQZ1548263",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.006
+    },
+    {
+      "id": "0227",
+      "kind": "PLATE",
+      "truth": "ABC7357",
+      "raw": "ABC7357",
+      "predicted": "ABC7357",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0012
+    },
+    {
+      "id": "0228",
+      "kind": "CONTAINER",
+      "truth": "ZPGJ1130442",
+      "raw": "ZPGJ1130442",
+      "predicted": "ZPGJ1130442",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0079
+    },
+    {
+      "id": "0229",
+      "kind": "PLATE",
+      "truth": "AB16192",
+      "raw": "AB1G192",
+      "predicted": "AB1G192",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.001
+    },
+    {
+      "id": "0230",
+      "kind": "CONTAINER",
+      "truth": "VSVJ7436644",
+      "raw": "VSVJ7436649",
+      "predicted": "VSVJ7436644",
+      "isoValid": true,
+      "corrected": true,
+      "latencyMs": 0.0495
+    },
+    {
+      "id": "0231",
+      "kind": "PLATE",
+      "truth": "ABC4217",
+      "raw": "ABC4217",
+      "predicted": "ABC4217",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0011
+    },
+    {
+      "id": "0232",
+      "kind": "CONTAINER",
+      "truth": "JADU5175531",
+      "raw": " JADU5175531",
+      "predicted": "JADU5175531",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0055
+    },
+    {
+      "id": "0233",
+      "kind": "PLATE",
+      "truth": "P859441",
+      "raw": "P859441",
+      "predicted": "P859441",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0011
+    },
+    {
+      "id": "0234",
+      "kind": "CONTAINER",
+      "truth": "VQCJ9666414",
+      "raw": "VDCJ9666414",
+      "predicted": "VQCJ9666414",
+      "isoValid": true,
+      "corrected": true,
+      "latencyMs": 0.015
+    },
+    {
+      "id": "0235",
+      "kind": "PLATE",
+      "truth": "P539379",
+      "raw": "P539379",
+      "predicted": "P539379",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0012
+    },
+    {
+      "id": "0236",
+      "kind": "CONTAINER",
+      "truth": "BZVJ9072361",
+      "raw": "BZVJ9072361",
+      "predicted": "BZVJ9072361",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.005
+    },
+    {
+      "id": "0237",
+      "kind": "PLATE",
+      "truth": "AB42668",
+      "raw": "AB42688",
+      "predicted": "AB42688",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.001
+    },
+    {
+      "id": "0238",
+      "kind": "CONTAINER",
+      "truth": "QJHU8410640",
+      "raw": "QJHU8410640",
+      "predicted": "QJHU8410640",
+      "isoValid": true,
+      "corrected": false,
+      "latencyMs": 0.0047
+    },
+    {
+      "id": "0239",
+      "kind": "PLATE",
+      "truth": "ABC8889",
+      "raw": "ABC8984",
+      "predicted": "ABC8984",
+      "isoValid": null,
+      "corrected": false,
+      "latencyMs": 0.0011
+    }
+  ]
+}

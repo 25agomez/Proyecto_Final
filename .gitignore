@@ -1,0 +1,39 @@
+# --- Secrets / local config ---
+.env
+infra/.env
+*.pem
+*.key
+
+# --- Java / Maven ---
+backend/target/
+backend/.mvn/wrapper/maven-wrapper.jar
+*.class
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+edge-ocr/evidence/
+edge-ocr/models/
+edge-ocr/data/          # dataset sintetico regenerable (semilla fija, ver edge-ocr/README.md)
+
+# --- Node ---
+node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/coverage/
+frontend/playwright-report/
+frontend/test-results/
+
+# --- Editors / OS ---
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# --- Experiment artefacts ---
+docs/experiments/**/*.png.tmp

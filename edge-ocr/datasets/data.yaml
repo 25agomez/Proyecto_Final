@@ -1,0 +1,31 @@
+# Dataset de ejemplo para el detector orientado (YOLOv8-obb).
+#
+# Copie este archivo como `datasets/data.yaml` y ajuste las rutas al dataset
+# real. Las clases deben conservar el orden del servicio:
+#   0 = PLATE, 1 = CONTAINER
+# (ver app/pipeline/detector.py -> DEFAULT_CLASS_NAMES).
+#
+# Formato del dataset (YOLO con cajas orientadas, "OBB"):
+#   datasets/
+#   ├── images/
+#   │   ├── train/  *.jpg
+#   │   └── val/    *.jpg
+#   └── labels/
+#       ├── train/  *.txt   (una linea por objeto)
+#       └── val/    *.txt
+#
+# Cada linea de etiqueta:
+#   <clase> <x1> <y1> <x2> <y2> <x3> <y3> <x4> <y4>
+# con las cuatro esquinas de la caja orientada normalizadas (0..1) en sentido
+# horario desde la esquina superior izquierda.
+
+path: .
+train: images/train
+val: images/val
+
+names:
+  0: PLATE
+  1: CONTAINER
+
+# Numero de clases (redundante pero util para validaciones).
+nc: 2

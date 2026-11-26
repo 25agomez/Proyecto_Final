@@ -1,0 +1,10 @@
+{
+  "mode": "live",
+  "samples": 0,
+  "containers": 0,
+  "plates": 0,
+  "notMeasured": "NO MEDIDO: el runtime de los modelos no esta disponible (pesos de YOLOv8-obb o PaddleOCR ausentes en el contenedor de evaluacion)",
+  "dataset": "data/synthetic",
+  "seed": 20260222,
+  "samplesDetail": []
+}
